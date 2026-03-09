@@ -80,7 +80,7 @@
     font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 900;
     line-height: 1.05;
-    color: var(--clr-white);
+    color: #ffffff;
     margin-bottom: 24px;
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
@@ -197,23 +197,23 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .stats {
+    .hero .stats {
         flex-direction: column;
         gap: 20px;
     }
 
-    .statDivider {
+    .hero .statDivider {
         width: 60px;
         height: 1px;
     }
 }
 
 @media (max-width: 480px) {
-    .title {
+    .hero .title {
         font-size: 2.5rem;
     }
 
-    .actions {
+    .hero .actions {
         flex-direction: column;
     }
 }

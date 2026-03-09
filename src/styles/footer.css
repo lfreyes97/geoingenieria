@@ -110,19 +110,19 @@
 
 /* Responsive */
 @media (max-width: 1100px) {
-    .inner {
+    .footer .inner {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
 }
 
 @media (max-width: 768px) {
-    .inner {
+    .footer .inner {
         grid-template-columns: 1fr;
         gap: 32px;
     }
 
-    .bottom {
+    .footer .bottom {
         flex-direction: column;
         text-align: center;
     }

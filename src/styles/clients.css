@@ -54,3 +54,14 @@
 .clients .logo:hover {
     color: var(--clr-gold);
 }
+
+@media (max-width: 768px) {
+    .clients .inner {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 20px;
+    }
+    .clients .label {
+        font-size: 0.85rem;
+    }
+}
