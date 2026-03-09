@@ -4,7 +4,7 @@
     background: var(--clr-bg);
 }
 
-.grid {
+.contact .grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: 60px;
@@ -14,36 +14,36 @@
 }
 
 /* Form */
-.form {
+.contact .form {
     background: var(--clr-surface);
     border: 1px solid var(--clr-border);
     border-radius: var(--radius);
     padding: 48px 44px;
 }
 
-.formRow {
+.contact .formRow {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.formGroup {
+.contact .formGroup {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 20px;
 }
 
-.formGroup label {
+.contact .formGroup label {
     font-family: var(--ff-head);
     font-weight: 600;
     font-size: 0.85rem;
     color: var(--clr-text);
 }
 
-.formGroup input,
-.formGroup select,
-.formGroup textarea {
+.contact .formGroup input,
+.contact .formGroup select,
+.contact .formGroup textarea {
     background: var(--clr-bg2);
     border: 1px solid var(--clr-border);
     border-radius: var(--radius-sm);
@@ -56,24 +56,24 @@
     -webkit-appearance: none;
 }
 
-.formGroup input::placeholder,
-.formGroup textarea::placeholder {
+.contact .formGroup input::placeholder,
+.contact .formGroup textarea::placeholder {
     color: var(--clr-text-muted);
 }
 
-.formGroup input:focus,
-.formGroup select:focus,
-.formGroup textarea:focus {
+.contact .formGroup input:focus,
+.contact .formGroup select:focus,
+.contact .formGroup textarea:focus {
     border-color: var(--clr-gold);
     box-shadow: 0 0 0 3px rgba(240, 142, 30, 0.12);
 }
 
-.formGroup textarea {
+.contact .formGroup textarea {
     resize: vertical;
     min-height: 130px;
 }
 
-.submit {
+.contact .submit {
     width: 100%;
     justify-content: center;
     border-radius: var(--radius-sm);
@@ -82,12 +82,12 @@
     margin-top: 4px;
 }
 
-.submit:disabled {
+.contact .submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
-.success {
+.contact .success {
     display: none;
     align-items: center;
     gap: 12px;
@@ -101,18 +101,18 @@
     font-family: var(--ff-head);
 }
 
-.success i {
+.contact .success i {
     font-size: 1.4rem;
 }
 
 /* Info sidebar */
-.info {
+.contact .info {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.infoCard {
+.contact .infoCard {
     display: flex;
     align-items: flex-start;
     gap: 18px;
@@ -123,11 +123,11 @@
     transition: var(--transition);
 }
 
-.infoCard:hover {
+.contact .infoCard:hover {
     border-color: rgba(240, 142, 30, 0.2);
 }
 
-.infoIcon {
+.contact .infoIcon {
     width: 44px;
     height: 44px;
     background: rgba(240, 142, 30, 0.1);
@@ -141,7 +141,7 @@
     flex-shrink: 0;
 }
 
-.infoCard h4 {
+.contact .infoCard h4 {
     font-family: var(--ff-head);
     font-weight: 700;
     font-size: 0.9rem;
@@ -149,20 +149,20 @@
     margin-bottom: 6px;
 }
 
-.infoCard p {
+.contact .infoCard p {
     color: var(--clr-text-muted);
     font-size: 0.88rem;
     line-height: 1.6;
 }
 
 /* Social */
-.socialRow {
+.contact .socialRow {
     display: flex;
     gap: 14px;
     margin-top: 6px;
 }
 
-.socialBtn {
+.contact .socialBtn {
     width: 44px;
     height: 44px;
     background: var(--clr-surface);
@@ -176,7 +176,7 @@
     transition: var(--transition);
 }
 
-.socialBtn:hover {
+.contact .socialBtn:hover {
     background: rgba(240, 142, 30, 0.1);
     border-color: rgba(240, 142, 30, 0.4);
     color: var(--clr-gold);

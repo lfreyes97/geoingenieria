@@ -1,7 +1,5 @@
 ---
 // Services component — Geoingeniería Ltda
-import styles from '../styles/services.module.css';
-
 const services = [
   {
     id: 'svc-1',
@@ -54,7 +52,7 @@ const services = [
 ];
 ---
 
-<section class={styles.services} id="servicios">
+<section class="services" id="servicios">
   <div class="section-header">
     <span class="section-tag">Lo que hacemos</span>
     <h2 class="section-title">Nuestros <span class="text-accent">Servicios</span></h2>
@@ -65,20 +63,20 @@ const services = [
     </p>
   </div>
 
-  <div class={styles.grid}>
+  <div class="grid">
     {services.map(svc => (
-      <div class={`${styles.card}${svc.featured ? ` ${styles.featured}` : ''}`} id={svc.id} data-reveal>
-        <div class={styles.iconWrap}>
+      <div class={`card${svc.featured ? ' featured' : ''}`} id={svc.id} data-reveal>
+        <div class="iconWrap">
           <i class={`fa-solid ${svc.icon}`}></i>
         </div>
         <h3>{svc.title}</h3>
         <p>{svc.desc}</p>
-        <ul class={styles.list}>
+        <ul class="list">
           {svc.items.map(item => (
             <li><i class="fa-solid fa-check"></i> {item}</li>
           ))}
         </ul>
-        <a href="#contacto" class={styles.link}>
+        <a href="#contacto" class="link">
           Consultar <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>

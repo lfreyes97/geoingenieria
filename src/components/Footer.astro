@@ -1,7 +1,5 @@
 ---
 // Footer component — Geoingeniería Ltda
-import styles from '../styles/footer.module.css';
-
 const serviceLinks = [
   'Estudios Geotécnicos',
   'Obras Viales',
@@ -10,17 +8,17 @@ const serviceLinks = [
   'Gestión Ambiental',
 ];
 const companyLinks = [
-  { label: 'Quiénes somos', href: '#nosotros' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Quiénes somos', href: '/#nosotros' },
+  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Contacto', href: '/contacto' },
   { label: 'Trabaja con nosotros', href: '#' },
   { label: 'Política de privacidad', href: '#' },
 ];
 ---
 
-<footer class={styles.footer}>
-  <div class={styles.inner}>
-    <div class={styles.brand}>
+<footer class="footer">
+  <div class="inner">
+    <div class="brand">
       <a href="#inicio" class="nav-logo">
         <div class="logo-icon">
           <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
@@ -40,7 +38,7 @@ const companyLinks = [
       </p>
     </div>
 
-    <div class={styles.links}>
+    <div class="links">
       <h4>Servicios</h4>
       <ul>
         {serviceLinks.map(s => (
@@ -49,7 +47,7 @@ const companyLinks = [
       </ul>
     </div>
 
-    <div class={styles.links}>
+    <div class="links">
       <h4>Empresa</h4>
       <ul>
         {companyLinks.map(l => (
@@ -58,10 +56,10 @@ const companyLinks = [
       </ul>
     </div>
 
-    <div class={styles.newsletter}>
+    <div class="newsletter">
       <h4>Boletín Informativo</h4>
       <p>Suscríbase para recibir noticias sobre proyectos e innovaciones en ingeniería.</p>
-      <div class={styles.form}>
+      <div class="form">
         <input type="email" placeholder="su@correo.cl" aria-label="Correo para newsletter" />
         <button type="button" aria-label="Suscribirse">
           <i class="fa-solid fa-arrow-right"></i>
@@ -70,7 +68,7 @@ const companyLinks = [
     </div>
   </div>
 
-  <div class={styles.bottom}>
+  <div class="bottom">
     <p>© 2024 Geoingeniería Ltda. Todos los derechos reservados.</p>
     <p>NIT: 900.123.456-7 | Riohacha - La Guajira, Colombia</p>
   </div>

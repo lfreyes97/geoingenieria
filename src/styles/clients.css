@@ -7,14 +7,14 @@
     overflow: hidden;
 }
 
-.inner {
+.clients .inner {
     display: flex;
     align-items: center;
     gap: 32px;
     padding: 0 40px;
 }
 
-.label {
+.clients .label {
     color: var(--clr-text-muted);
     font-size: 0.78rem;
     letter-spacing: 0.12em;
@@ -23,7 +23,7 @@
     white-space: nowrap;
 }
 
-.logos {
+.clients .logos {
     display: flex;
     animation: marquee 18s linear infinite;
     white-space: nowrap;
@@ -39,7 +39,7 @@
     }
 }
 
-.logo {
+.clients .logo {
     display: inline-flex;
     align-items: center;
     font-family: var(--ff-head);
@@ -51,6 +51,6 @@
     letter-spacing: 0.05em;
 }
 
-.logo:hover {
+.clients .logo:hover {
     color: var(--clr-gold);
 }

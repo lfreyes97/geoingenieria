@@ -1,7 +1,5 @@
 ---
 // About component — Geoingeniería Ltda
-import styles from '../styles/about.module.css';
-
 const values = [
   {
     icon: 'fa-shield-halved',
@@ -28,9 +26,9 @@ const certifications = [
 ];
 ---
 
-<section class={styles.about} id="nosotros">
-  <div class={styles.content}>
-    <div class={styles.text}>
+<section class="about" id="nosotros">
+  <div class="content">
+    <div class="text">
       <span class="section-tag">Quiénes somos</span>
       <h2 class="section-title">
         Más de dos décadas<br /><span class="text-accent">construyendo Colombia</span>
@@ -47,10 +45,10 @@ const certifications = [
         acordados.
       </p>
 
-      <div class={styles.values}>
+      <div class="values">
         {values.map(v => (
-          <div class={styles.valueItem} data-reveal>
-            <div class={styles.valueIcon}>
+          <div class="valueItem" data-reveal>
+            <div class="valueIcon">
               <i class={`fa-solid ${v.icon}`}></i>
             </div>
             <div>
@@ -66,17 +64,17 @@ const certifications = [
       </a>
     </div>
 
-    <div class={styles.visual}>
-      <div class={styles.imgWrap} data-reveal>
+    <div class="visual">
+      <div class="imgWrap" data-reveal>
         <img src="/images/geo_survey.png" alt="Equipo Geoingeniería Ltda" />
-        <div class={styles.badge}>
-          <span class={styles.badgeNum}>ISO</span>
-          <span class={styles.badgeText}>9001:2015<br />Certificados</span>
+        <div class="badge">
+          <span class="badgeNum">ISO</span>
+          <span class="badgeText">9001:2015<br />Certificados</span>
         </div>
       </div>
-      <div class={styles.certifications}>
+      <div class="certifications">
         {certifications.map(cert => (
-          <div class={styles.certItem}>
+          <div class="certItem">
             <i class="fa-solid fa-certificate"></i> {cert}
           </div>
         ))}
@@ -84,4 +82,3 @@ const certifications = [
     </div>
   </div>
 </section>
-

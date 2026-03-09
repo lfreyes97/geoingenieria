@@ -1,16 +1,14 @@
 ---
 // Clients marquee component — Geoingeniería Ltda
-import styles from '../styles/clients.module.css';
-
 const clients = ['MOP', 'CODELCO', 'ENAP', 'GORE Biobío', 'Serviu', 'AES Gener'];
 ---
 
-<section class={styles.clients}>
-  <div class={styles.inner}>
-    <p class={styles.label}>Confían en nosotros</p>
-    <div class={styles.logos}>
+<section class="clients">
+  <div class="inner">
+    <p class="label">Confían en nosotros</p>
+    <div class="logos">
       {[...clients, ...clients].map((c, i) => (
-        <span class={styles.logo} key={i}>{c}</span>
+        <span class="logo" key={i}>{c}</span>
       ))}
     </div>
   </div>

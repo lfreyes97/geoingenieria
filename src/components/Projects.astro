@@ -1,7 +1,5 @@
 ---
 // Projects component — Geoingeniería Ltda
-import styles from '../styles/projects.module.css';
-
 const projects = [
   {
     id: 'proj-1',
@@ -33,7 +31,7 @@ const projects = [
 ];
 ---
 
-<section class={styles.projects} id="proyectos">
+<section class="projects" id="proyectos">
   <div class="section-header light">
     <span class="section-tag">Nuestro trabajo</span>
     <h2 class="section-title">Proyectos <span class="text-accent">Destacados</span></h2>
@@ -43,21 +41,21 @@ const projects = [
     </p>
   </div>
 
-  <div class={styles.grid}>
+  <div class="grid">
     {projects.map(proj => (
-      <div class={`${styles.card}${proj.large ? ` ${styles.large}` : ''}`} id={proj.id} data-reveal>
+      <div class={`card${proj.large ? ' large' : ''}`} id={proj.id} data-reveal>
         <img src={proj.image} alt={proj.alt} loading="lazy" />
-        <div class={styles.overlay}>
-          <div class={styles.tag}>{proj.tag}</div>
+        <div class="overlay">
+          <div class="tag">{proj.tag}</div>
           <h3>{proj.title}</h3>
           <p>{proj.desc}</p>
-          <a href="#contacto" class={styles.btn}>Ver detalles</a>
+          <a href="#contacto" class="btn">Ver detalles</a>
         </div>
       </div>
     ))}
   </div>
 
-  <div class={styles.cta}>
+  <div class="cta">
     <a href="#contacto" class="btn-primary">
       Ver Todos los Proyectos <i class="fa-solid fa-arrow-right"></i>
     </a>

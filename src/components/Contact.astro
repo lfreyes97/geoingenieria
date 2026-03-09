@@ -1,7 +1,5 @@
 ---
 // Contact component — Geoingeniería Ltda
-import styles from '../styles/contact.module.css';
-
 const infoCards = [
   {
     icon: 'fa-location-dot',
@@ -26,7 +24,7 @@ const infoCards = [
 ];
 ---
 
-<section class={styles.contact} id="contacto">
+<section class="contact" id="contacto">
   <div class="section-header">
     <span class="section-tag">Contáctenos</span>
     <h2 class="section-title">¿Tiene un <span class="text-accent">Proyecto</span> en mente?</h2>
@@ -36,29 +34,29 @@ const infoCards = [
     </p>
   </div>
 
-  <div class={styles.grid}>
-    <form class={styles.form} id="contact-form" novalidate>
-      <div class={styles.formRow}>
-        <div class={styles.formGroup}>
+  <div class="grid">
+    <form class="form" id="contact-form" novalidate>
+      <div class="formRow">
+        <div class="formGroup">
           <label for="name">Nombre completo *</label>
           <input type="text" id="name" name="name" placeholder="Ej.: Carlos Muñoz" required />
         </div>
-        <div class={styles.formGroup}>
+        <div class="formGroup">
           <label for="company">Empresa</label>
           <input type="text" id="company" name="company" placeholder="Ej.: Constructora XYZ Ltda" />
         </div>
       </div>
-      <div class={styles.formRow}>
-        <div class={styles.formGroup}>
+      <div class="formRow">
+        <div class="formGroup">
           <label for="email">Correo electrónico *</label>
           <input type="email" id="email" name="email" placeholder="correo@empresa.cl" required />
         </div>
-        <div class={styles.formGroup}>
+        <div class="formGroup">
           <label for="phone">Teléfono</label>
           <input type="tel" id="phone" name="phone" placeholder="+56 9 1234 5678" />
         </div>
       </div>
-      <div class={styles.formGroup}>
+      <div class="formGroup">
         <label for="service">Servicio de interés *</label>
         <select id="service" name="service" required>
           <option value="" disabled selected>Seleccione un servicio…</option>
@@ -71,7 +69,7 @@ const infoCards = [
           <option>Otro</option>
         </select>
       </div>
-      <div class={styles.formGroup}>
+      <div class="formGroup">
         <label for="message">Descripción del proyecto *</label>
         <textarea
           id="message"
@@ -81,19 +79,19 @@ const infoCards = [
           required
         ></textarea>
       </div>
-      <button type="submit" class={`btn-primary ${styles.submit}`} id="submit-btn">
+      <button type="submit" class="btn-primary submit" id="submit-btn">
         Enviar Consulta <i class="fa-solid fa-paper-plane"></i>
       </button>
-      <div class={styles.success} id="form-success">
+      <div class="success" id="form-success">
         <i class="fa-solid fa-circle-check"></i>
         ¡Consulta enviada! Nos contactaremos pronto.
       </div>
     </form>
 
-    <div class={styles.info}>
+    <div class="info">
       {infoCards.map(card => (
-        <div class={styles.infoCard} data-reveal>
-          <div class={styles.infoIcon}>
+        <div class="infoCard" data-reveal>
+          <div class="infoIcon">
             <i class={`fa-solid ${card.icon}`}></i>
           </div>
           <div>
@@ -103,14 +101,14 @@ const infoCards = [
         </div>
       ))}
 
-      <div class={styles.socialRow}>
-        <a href="#" class={styles.socialBtn} aria-label="LinkedIn">
+      <div class="socialRow">
+        <a href="#" class="socialBtn" aria-label="LinkedIn">
           <i class="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="#" class={styles.socialBtn} aria-label="Facebook">
+        <a href="#" class="socialBtn" aria-label="Facebook">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="#" class={styles.socialBtn} aria-label="Instagram">
+        <a href="#" class="socialBtn" aria-label="Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
       </div>
