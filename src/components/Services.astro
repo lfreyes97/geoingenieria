@@ -1,0 +1,87 @@
+---
+// Services component — Geoingeniería Ltda
+import styles from '../styles/services.module.css';
+
+const services = [
+  {
+    id: 'svc-1',
+    icon: 'fa-mountain',
+    title: 'Estudios Geotécnicos',
+    desc: 'Investigación del subsuelo, análisis de mecánica de suelos, sondajes y caracterización geológica para proyectos de todo tipo.',
+    items: ['Sondajes y calicatas', 'Ensayos SPT & CPT', 'Informes geotécnicos'],
+    featured: false,
+  },
+  {
+    id: 'svc-2',
+    icon: 'fa-road',
+    title: 'Obras Viales',
+    desc: 'Diseño y construcción de carreteras, autopistas, caminos rurales y obras de pavimentación con los más altos estándares técnicos.',
+    items: ['Diseño geométrico vial', 'Pavimentación urbana', 'Supervisión de obras'],
+    featured: true,
+  },
+  {
+    id: 'svc-3',
+    icon: 'fa-water',
+    title: 'Obras Hidráulicas',
+    desc: 'Proyectos de drenaje, alcantarillado, canales de riego y obras de contención de aguas con enfoque en sustentabilidad.',
+    items: ['Diseño de canales', 'Sistemas de drenaje', 'Obras de contención'],
+    featured: false,
+  },
+  {
+    id: 'svc-4',
+    icon: 'fa-hard-hat',
+    title: 'Infraestructura Civil',
+    desc: 'Construcción de puentes, túneles, muros de contención y obras de arte para proyectos de infraestructura a gran escala.',
+    items: ['Puentes y viaductos', 'Túneles', 'Muros de contención'],
+    featured: false,
+  },
+  {
+    id: 'svc-5',
+    icon: 'fa-drafting-compass',
+    title: 'Asesoría y Diseño',
+    desc: 'Consultoría técnica especializada, elaboración de proyectos de ingeniería y supervisión técnica independiente para sus obras.',
+    items: ['Proyectos de ingeniería', 'ITO independiente', 'Asesoría normativa'],
+    featured: false,
+  },
+  {
+    id: 'svc-6',
+    icon: 'fa-leaf',
+    title: 'Gestión Ambiental',
+    desc: 'Evaluación de impacto ambiental, planes de manejo y mitigación, y cumplimiento de normativas ambientales para proyectos de construcción.',
+    items: ['DGA & SEIA', 'Planes de manejo', 'Monitoreo ambiental'],
+    featured: false,
+  },
+];
+---
+
+<section class={styles.services} id="servicios">
+  <div class="section-header">
+    <span class="section-tag">Lo que hacemos</span>
+    <h2 class="section-title">Nuestros <span class="text-accent">Servicios</span></h2>
+    <p class="section-desc">
+      Ofrecemos soluciones integrales en ingeniería geotécnica y obras civiles,
+      respaldadas por tecnología de punta y un equipo de profesionales altamente
+      calificados.
+    </p>
+  </div>
+
+  <div class={styles.grid}>
+    {services.map(svc => (
+      <div class={`${styles.card}${svc.featured ? ` ${styles.featured}` : ''}`} id={svc.id} data-reveal>
+        <div class={styles.iconWrap}>
+          <i class={`fa-solid ${svc.icon}`}></i>
+        </div>
+        <h3>{svc.title}</h3>
+        <p>{svc.desc}</p>
+        <ul class={styles.list}>
+          {svc.items.map(item => (
+            <li><i class="fa-solid fa-check"></i> {item}</li>
+          ))}
+        </ul>
+        <a href="#contacto" class={styles.link}>
+          Consultar <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>

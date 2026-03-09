@@ -1,0 +1,100 @@
+---
+// Navbar component — Geoingeniería Ltda
+import ThemeToggle from './ThemeToggle.astro';
+import styles from '../styles/navbar.module.css';
+---
+
+<nav class={styles.navbar} id="navbar">
+  <div class={styles.container}>
+    <a href="#inicio" class={styles.logo}>
+      <div class={styles.logoIcon}>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <polygon points="18,2 34,30 2,30" stroke="#E8A838" stroke-width="2.5" fill="none"/>
+          <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"/>
+          <line x1="18" y1="2" x2="18" y2="30" stroke="#E8A838" stroke-width="1.5" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class={styles.logoText}>
+        <span class={styles.logoMain}>Geoingeniería</span>
+        <span class={styles.logoSub}>Ltda</span>
+      </div>
+    </a>
+
+    <ul class={styles.links} id="nav-links">
+      <li><a href="#inicio" class={styles.link} data-nav-link>Inicio</a></li>
+      <li><a href="#servicios" class={styles.link} data-nav-link>Servicios</a></li>
+      <li><a href="#proyectos" class={styles.link} data-nav-link>Proyectos</a></li>
+      <li><a href="#nosotros" class={styles.link} data-nav-link>Nosotros</a></li>
+      <li><a href="#contacto" class={styles.link} data-nav-link>Contacto</a></li>
+    </ul>
+
+    <a href="#contacto" class={styles.cta}>Cotizar Proyecto</a>
+
+    <ThemeToggle classes={{ toggle: styles.themeToggle, sun: styles.iconSun, moon: styles.iconMoon }} />
+
+    <button class={styles.hamburger} id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<script>
+  // Dynamic CSS variables passed from CSS modules can be difficult to query, we use IDs or data attributes
+  
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar')!;
+  window.addEventListener('scroll', () => {
+    // using a dataset attribute instead of class for global state, or we can use standard class but CSS modules generate hashes
+    if (window.scrollY > 60) {
+      navbar.setAttribute('data-scrolled', 'true');
+    } else {
+      navbar.removeAttribute('data-scrolled');
+    }
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger')!;
+  const navLinks = document.getElementById('nav-links')!;
+  
+  hamburger.addEventListener('click', () => {
+    const isActive = hamburger.toggleAttribute('data-active');
+    if (isActive) {
+      navLinks.setAttribute('data-open', 'true');
+    } else {
+      navLinks.removeAttribute('data-open');
+    }
+  });
+  
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.removeAttribute('data-active');
+      navLinks.removeAttribute('data-open');
+    });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinkEls = document.querySelectorAll('[data-nav-link]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinkEls.forEach(l => l.removeAttribute('data-active'));
+        const active = document.querySelector(`[data-nav-link][href="#${entry.target.id}"]`);
+        if (active) active.setAttribute('data-active', 'true');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector((a as HTMLAnchorElement).getAttribute('href')!);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>

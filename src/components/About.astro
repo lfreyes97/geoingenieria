@@ -1,0 +1,87 @@
+---
+// About component — Geoingeniería Ltda
+import styles from '../styles/about.module.css';
+
+const values = [
+  {
+    icon: 'fa-shield-halved',
+    title: 'Seguridad',
+    desc: 'Cero tolerancia a accidentes en todas nuestras obras y operaciones.',
+  },
+  {
+    icon: 'fa-microscope',
+    title: 'Rigor Técnico',
+    desc: 'Estándares de calidad certificados bajo ISO 9001:2015.',
+  },
+  {
+    icon: 'fa-handshake',
+    title: 'Compromiso',
+    desc: 'Cumplimiento de plazos y presupuestos garantizado contractualmente.',
+  },
+];
+
+const certifications = [
+  'Certificación ISO 9001:2015',
+  'Registro BNE — MOP',
+  'Acreditación SERNAGEOMIN',
+  'Proveedor ENAP & CODELCO',
+];
+---
+
+<section class={styles.about} id="nosotros">
+  <div class={styles.content}>
+    <div class={styles.text}>
+      <span class="section-tag">Quiénes somos</span>
+      <h2 class="section-title">
+        Más de dos décadas<br /><span class="text-accent">construyendo Colombia</span>
+      </h2>
+      <p>
+        Fundada en 1999, Geoingeniería Ltda es una empresa colombiana de ingeniería
+        especializada en obras civiles, geotecnia e infraestructura. Trabajamos con
+        entidades públicas y privadas en proyectos de alta complejidad técnica a lo
+        largo de todo el país.
+      </p>
+      <p>
+        Nuestro equipo de más de 80 profesionales combina experiencia en terreno con
+        tecnología de punta para entregar proyectos dentro de plazos y presupuestos
+        acordados.
+      </p>
+
+      <div class={styles.values}>
+        {values.map(v => (
+          <div class={styles.valueItem} data-reveal>
+            <div class={styles.valueIcon}>
+              <i class={`fa-solid ${v.icon}`}></i>
+            </div>
+            <div>
+              <h4>{v.title}</h4>
+              <p>{v.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <a href="#contacto" class="btn-primary">
+        Trabaja con Nosotros <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class={styles.visual}>
+      <div class={styles.imgWrap} data-reveal>
+        <img src="/images/geo_survey.png" alt="Equipo Geoingeniería Ltda" />
+        <div class={styles.badge}>
+          <span class={styles.badgeNum}>ISO</span>
+          <span class={styles.badgeText}>9001:2015<br />Certificados</span>
+        </div>
+      </div>
+      <div class={styles.certifications}>
+        {certifications.map(cert => (
+          <div class={styles.certItem}>
+            <i class="fa-solid fa-certificate"></i> {cert}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+

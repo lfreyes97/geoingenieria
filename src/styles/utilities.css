@@ -1,0 +1,56 @@
+/* ════════════════════════════════
+   SHARED UTILITIES
+   (used by 2+ components)
+════════════════════════════════ */
+
+/* Section anatomy */
+.section-tag {
+    display: inline-block;
+    color: var(--clr-gold);
+    font-family: var(--ff-head);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.section-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--clr-white);
+    margin-bottom: 16px;
+}
+
+.section-desc {
+    color: var(--clr-text-muted);
+    font-size: 1.05rem;
+    max-width: 640px;
+}
+
+.text-accent {
+    color: var(--clr-gold);
+}
+
+.section-header {
+    text-align: center;
+    padding: 0 20px 60px;
+}
+
+.section-header .section-desc {
+    margin: 0 auto;
+}
+
+/* Scroll-reveal (applied/removed by JS in index.astro) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}

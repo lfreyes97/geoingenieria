@@ -1,0 +1,97 @@
+---
+// Hero component — Geoingeniería Ltda
+import styles from '../styles/hero.module.css';
+---
+
+<section class={styles.hero} id="inicio">
+  <div class={styles.bg}>
+    <img
+      src="/images/hero_construction.png"
+      alt="Obras de ingeniería civil"
+      class={styles.img}
+    />
+    <div class={styles.overlay}></div>
+  </div>
+
+  <div class={styles.content}>
+    <div class={styles.badge}>
+      <span class={styles.badgeDot}></span>
+      Más de 25 años de experiencia
+    </div>
+    <h1 class={styles.title}>
+      Ingeniería que<br />
+      <span class={styles.accent}>Transforma</span><br />
+      el Territorio
+    </h1>
+    <p class={styles.desc}>
+      Soluciones especializadas en geotecnia, obras civiles e infraestructura
+      vial, diseñadas con precisión técnica e innovación para los proyectos más
+      exigentes de Colombia y Latinoamérica.
+    </p>
+    <div class={styles.actions}>
+      <a href="#proyectos" class="btn-primary">
+        Ver Proyectos <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="#servicios" class="btn-outline">Nuestros Servicios</a>
+    </div>
+  </div>
+
+  <div class={styles.stats} data-hero-stats>
+    <div class={styles.statItem}>
+      <span class={styles.statNumber} data-stat-number data-target="350" data-suffix="">+350</span>
+      <span class={styles.statLabel}>Proyectos completados</span>
+    </div>
+    <div class={styles.statDivider}></div>
+    <div class={styles.statItem}>
+      <span class={styles.statNumber} data-stat-number data-target="25" data-suffix="+">25+</span>
+      <span class={styles.statLabel}>Años de experiencia</span>
+    </div>
+    <div class={styles.statDivider}></div>
+    <div class={styles.statItem}>
+      <span class={styles.statNumber} data-stat-number data-target="12" data-suffix="">12</span>
+      <span class={styles.statLabel}>Departamentos en Colombia</span>
+    </div>
+    <div class={styles.statDivider}></div>
+    <div class={styles.statItem}>
+      <span class={styles.statNumber} data-stat-number data-target="98" data-suffix="%">98%</span>
+      <span class={styles.statLabel}>Clientes satisfechos</span>
+    </div>
+  </div>
+
+  <div class={styles.scroll}>
+    <span>Descubrir más</span>
+    <div class={styles.scrollArrow}>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Counter animation
+  function animateCounter(el: HTMLElement, target: number, suffix: string) {
+    let count = 0;
+    const step = Math.ceil(target / 60);
+    const interval = setInterval(() => {
+      count = Math.min(count + step, target);
+      el.textContent = '+' + count + suffix;
+      if (count >= target) clearInterval(interval);
+    }, 25);
+  }
+
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll<HTMLElement>('[data-stat-number]').forEach(el => {
+          const target = parseInt(el.dataset.target || '0');
+          const suffix = el.dataset.suffix || '';
+          el.textContent = '0';
+          animateCounter(el, target, suffix);
+        });
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsEl = document.querySelector('[data-hero-stats]');
+  if (statsEl) statsObserver.observe(statsEl);
+</script>

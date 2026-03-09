@@ -1,0 +1,65 @@
+---
+// Projects component — Geoingeniería Ltda
+import styles from '../styles/projects.module.css';
+
+const projects = [
+  {
+    id: 'proj-1',
+    image: '/images/dam_project.png',
+    alt: 'Proyecto Presa El Toro',
+    tag: 'Obras Hidráulicas',
+    title: 'Presa El Toro — Región del Biobío',
+    desc: 'Diseño y supervisión de obras de contención hidráulica en complejo terreno montañoso.',
+    large: true,
+  },
+  {
+    id: 'proj-2',
+    image: '/images/geo_survey.png',
+    alt: 'Estudio geotécnico Atacama',
+    tag: 'Geotecnia',
+    title: 'Estudio Geotécnico Atacama',
+    desc: 'Caracterización del subsuelo en zona desértica para proyecto minero a gran escala.',
+    large: false,
+  },
+  {
+    id: 'proj-3',
+    image: '/images/tunnel_project.png',
+    alt: 'Túnel Ruta 68',
+    tag: 'Infraestructura Civil',
+    title: 'Túnel Ruta 68 — Valparaíso',
+    desc: 'Excavación y revestimiento de túnel de 1.2 km en roca dura y variable.',
+    large: false,
+  },
+];
+---
+
+<section class={styles.projects} id="proyectos">
+  <div class="section-header light">
+    <span class="section-tag">Nuestro trabajo</span>
+    <h2 class="section-title">Proyectos <span class="text-accent">Destacados</span></h2>
+    <p class="section-desc">
+      Una selección de los proyectos más significativos que hemos desarrollado a
+      lo largo de nuestra trayectoria.
+    </p>
+  </div>
+
+  <div class={styles.grid}>
+    {projects.map(proj => (
+      <div class={`${styles.card}${proj.large ? ` ${styles.large}` : ''}`} id={proj.id} data-reveal>
+        <img src={proj.image} alt={proj.alt} loading="lazy" />
+        <div class={styles.overlay}>
+          <div class={styles.tag}>{proj.tag}</div>
+          <h3>{proj.title}</h3>
+          <p>{proj.desc}</p>
+          <a href="#contacto" class={styles.btn}>Ver detalles</a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class={styles.cta}>
+    <a href="#contacto" class="btn-primary">
+      Ver Todos los Proyectos <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</section>

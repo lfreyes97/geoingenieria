@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Clients from '../components/Clients.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Geoingeniería Ltda | Ingeniería que Transforma el Territorio"
+  description="Geoingeniería Ltda — Empresa especializada en ingeniería civil, geotecnia, proyectos viales y obras hidráulicas con más de 25 años de experiencia."
+>
+  <Navbar />
+  <Hero />
+  <Services />
+  <Projects />
+  <About />
+  <Clients />
+  <Contact />
+  <Footer />
+</Layout>
+
+<script>
+  // Global scroll-reveal
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document
+    .querySelectorAll('[data-reveal]')
+    .forEach(el => {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+</script>

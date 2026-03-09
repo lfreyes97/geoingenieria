@@ -1,0 +1,77 @@
+---
+// Footer component — Geoingeniería Ltda
+import styles from '../styles/footer.module.css';
+
+const serviceLinks = [
+  'Estudios Geotécnicos',
+  'Obras Viales',
+  'Obras Hidráulicas',
+  'Infraestructura Civil',
+  'Gestión Ambiental',
+];
+const companyLinks = [
+  { label: 'Quiénes somos', href: '#nosotros' },
+  { label: 'Proyectos', href: '#proyectos' },
+  { label: 'Contacto', href: '#contacto' },
+  { label: 'Trabaja con nosotros', href: '#' },
+  { label: 'Política de privacidad', href: '#' },
+];
+---
+
+<footer class={styles.footer}>
+  <div class={styles.inner}>
+    <div class={styles.brand}>
+      <a href="#inicio" class="nav-logo">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+            <polygon points="18,2 34,30 2,30" stroke="#E8A838" stroke-width="2.5" fill="none"/>
+            <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"/>
+            <line x1="18" y1="2" x2="18" y2="30" stroke="#E8A838" stroke-width="1.5" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Geoingeniería</span>
+          <span class="logo-sub">Ltda</span>
+        </div>
+      </a>
+      <p>
+        Ingeniería que transforma el territorio. Más de 25 años de experiencia en
+        proyectos de infraestructura a lo largo de Colombia.
+      </p>
+    </div>
+
+    <div class={styles.links}>
+      <h4>Servicios</h4>
+      <ul>
+        {serviceLinks.map(s => (
+          <li><a href="#servicios">{s}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class={styles.links}>
+      <h4>Empresa</h4>
+      <ul>
+        {companyLinks.map(l => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class={styles.newsletter}>
+      <h4>Boletín Informativo</h4>
+      <p>Suscríbase para recibir noticias sobre proyectos e innovaciones en ingeniería.</p>
+      <div class={styles.form}>
+        <input type="email" placeholder="su@correo.cl" aria-label="Correo para newsletter" />
+        <button type="button" aria-label="Suscribirse">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.bottom}>
+    <p>© 2024 Geoingeniería Ltda. Todos los derechos reservados.</p>
+    <p>NIT: 900.123.456-7 | Riohacha - La Guajira, Colombia</p>
+  </div>
+</footer>

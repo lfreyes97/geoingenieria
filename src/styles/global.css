@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════════
+   GEOINGENIERÍA LTDA — GLOBAL STYLES
+   Only: tokens, theme, reset, shared utilities
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Brand Palette ── */
+:root {
+    --steel-blue: #2B7BC3;
+    --platinum: #DEDEDE;
+    --carrot-orange: #F08E1E;
+    --white: #FFFFFF;
+    --lapis-lazuli: #105891;
+    --letter-gray: #727272;
+    --safety-orange: #E87817;
+    --celestial-blue: #0094DE;
+}
+
+/* ── Dark Theme (default) ── */
+:root {
+    --clr-bg: #081524;
+    --clr-bg2: #0b1d30;
+    --clr-bg3: #0d2238;
+    --clr-surface: #102843;
+    --clr-surface2: #133255;
+    --clr-border: rgba(0, 148, 222, 0.12);
+
+    --clr-gold: var(--carrot-orange);
+    --clr-gold-light: #F9B05A;
+    --clr-gold-dark: var(--safety-orange);
+
+    --clr-accent2: var(--celestial-blue);
+    --clr-accent2-mid: var(--steel-blue);
+
+    --clr-text: var(--platinum);
+    --clr-text-muted: var(--letter-gray);
+    --clr-white: var(--white);
+
+    --ff-head: 'Outfit', sans-serif;
+    --ff-body: 'Inter', sans-serif;
+    --radius: 16px;
+    --radius-sm: 8px;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --nav-h: 80px;
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+    --clr-bg: #f4f7fb;
+    --clr-bg2: #edf1f7;
+    --clr-bg3: #e4eaf3;
+    --clr-surface: #ffffff;
+    --clr-surface2: #f0f4fa;
+    --clr-border: rgba(43, 123, 195, 0.15);
+
+    --clr-gold: var(--safety-orange);
+    --clr-gold-light: var(--carrot-orange);
+    --clr-gold-dark: #cc6510;
+
+    --clr-text: #1c2b3a;
+    --clr-text-muted: #5a6a7a;
+    --clr-white: #1c2b3a;
+
+    --shadow: 0 20px 60px rgba(16, 88, 145, 0.10);
+    --shadow-card: 0 4px 24px rgba(16, 88, 145, 0.08);
+}
+
+/* ── color-scheme hints ── */
+html {
+    color-scheme: dark;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+}
+
+/* ── Smooth theme transitions ── */
+html,
+html * {
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+/* ════════════════════════════════
+   RESET & BASE
+════════════════════════════════ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--ff-body);
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+}
+
+input,
+textarea,
+select {
+    font-family: var(--ff-body);
+    color: var(--clr-text);
+    border: none;
+    outline: none;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-gold-dark);
+    border-radius: 3px;
+}

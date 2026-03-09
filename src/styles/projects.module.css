@@ -1,0 +1,138 @@
+/* ── Projects Section ── */
+.projects {
+    padding: 100px clamp(20px, 7vw, 100px);
+    background: var(--clr-bg);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 420px;
+    gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto 48px;
+}
+
+.cta {
+    text-align: center;
+}
+
+/* Card */
+.card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover img {
+    transform: scale(1.07);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    transition: var(--transition);
+}
+
+.tag {
+    display: inline-block;
+    background: var(--clr-gold);
+    color: #fff;
+    font-family: var(--ff-head);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    width: fit-content;
+}
+
+.card h3 {
+    font-family: var(--ff-head);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.card p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: var(--transition);
+}
+
+.card:hover p {
+    opacity: 1;
+    transform: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-dark));
+    color: #fff;
+    font-family: var(--ff-head);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 9px 18px;
+    border-radius: 50px;
+    width: fit-content;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: var(--transition);
+}
+
+.card:hover .btn {
+    opacity: 1;
+    transform: none;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .card.large {
+        grid-column: 1 / -1;
+        height: 360px;
+    }
+
+    .card {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card.large,
+    .card {
+        height: 280px;
+    }
+}
