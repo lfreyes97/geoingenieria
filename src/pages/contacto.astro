@@ -1,29 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout
   title="Contacto | Geoingeniería Ltda"
   description="Póngase en contacto con Geoingeniería Ltda. cotice su proyecto y obtenga atención personalizada."
 >
-  <Navbar />
-  
-  <div class="page-header" style="margin-top: 100px; padding: 40px 0; text-align: center; background: rgba(var(--brand-primary-rgb), 0.05);">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
-      <span class="badge" style="display: inline-block; padding: 6px 12px; border-radius: 20px; background: rgba(var(--brand-primary-rgb), 0.1); color: var(--brand-primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Hablemos</span>
-      <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-dark); margin-bottom: 1rem;">Contacto</h1>
-      <p style="color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Estamos aquí para resolver sus dudas y ayudarle a materializar sus proyectos de ingeniería.</p>
-    </div>
-  </div>
-
-  <div style="padding-bottom: 80px;">
+  <div style="padding-bottom: 180px;">
     <Contact />
   </div>
-  
-  <Footer />
 </Layout>
 
 <style>

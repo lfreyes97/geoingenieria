@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import "../styles/utilities.css";
 import "../styles/buttons.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string;
@@ -48,7 +50,9 @@ const {
     </script>
   </head>
   <body>
+    <Navbar />
     <a class="skip-link" href="#main-content">Ir al contenido principal</a>
     <slot />
+    <Footer />
   </body>
 </html>
