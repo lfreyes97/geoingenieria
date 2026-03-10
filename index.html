@@ -1,423 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Geoingeniería Ltda — Empresa especializada en ingeniería civil, geotecnia, proyectos viales y obras hidráulicas con más de 25 años de experiencia." />
-  <title>Geoingeniería Ltda | Ingeniería que Transforma el Territorio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Geoingeniería Ltda — Empresa especializada en ingeniería civil, geotecnia, proyectos viales y obras hidráulicas con más de 25 años de experiencia."
+    />
+    <title>Geoingeniería Ltda | Ingeniería que Transforma el Territorio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Accessibility: Skip-to-content -->
+    <a class="skip-link" href="#main-content">Ir al contenido principal</a>
 
-  <!-- ══════════════════ NAVBAR ══════════════════ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#inicio" class="nav-logo">
-        <div class="logo-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <polygon points="18,2 34,30 2,30" stroke="#E8A838" stroke-width="2.5" fill="none"/>
-            <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"/>
-            <line x1="18" y1="2" x2="18" y2="30" stroke="#E8A838" stroke-width="1.5" opacity="0.7"/>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <span class="logo-main">Geoingeniería</span>
-          <span class="logo-sub">Ltda</span>
-        </div>
-      </a>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-
-      <a href="#contacto" class="nav-cta">Cotizar Proyecto</a>
-
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ══════════════════ HERO ══════════════════ -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <img src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/hero_construction_1773018997979.png" alt="Obras de ingeniería civil" class="hero-img" />
-      <div class="hero-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Más de 25 años de experiencia
-      </div>
-      <h1 class="hero-title">
-        Ingeniería que<br/>
-        <span class="hero-accent">Transforma</span><br/>
-        el Territorio
-      </h1>
-      <p class="hero-desc">
-        Soluciones especializadas en geotecnia, obras civiles e infraestructura vial, diseñadas con precisión técnica e innovación para los proyectos más exigentes de Chile y Latinoamérica.
-      </p>
-      <div class="hero-actions">
-        <a href="#proyectos" class="btn-primary">Ver Proyectos <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#servicios" class="btn-outline">Nuestros Servicios</a>
-      </div>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-number">+350</span>
-        <span class="stat-label">Proyectos completados</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">25+</span>
-        <span class="stat-label">Años de experiencia</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">12</span>
-        <span class="stat-label">Regiones en Chile</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">98%</span>
-        <span class="stat-label">Clientes satisfechos</span>
-      </div>
-    </div>
-
-    <div class="hero-scroll">
-      <span>Descubrir más</span>
-      <div class="scroll-arrow">
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ SERVICIOS ══════════════════ -->
-  <section class="services" id="servicios">
-    <div class="section-header">
-      <span class="section-tag">Lo que hacemos</span>
-      <h2 class="section-title">Nuestros <span class="text-accent">Servicios</span></h2>
-      <p class="section-desc">Ofrecemos soluciones integrales en ingeniería geotécnica y obras civiles, respaldadas por tecnología de punta y un equipo de profesionales altamente calificados.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card" id="svc-1">
-        <div class="service-icon-wrap">
-          <i class="fa-solid fa-mountain"></i>
-        </div>
-        <h3>Estudios Geotécnicos</h3>
-        <p>Investigación del subsuelo, análisis de mecánica de suelos, sondajes y caracterización geológica para proyectos de todo tipo.</p>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Sondajes y calicatas</li>
-          <li><i class="fa-solid fa-check"></i> Ensayos SPT & CPT</li>
-          <li><i class="fa-solid fa-check"></i> Informes geotécnicos</li>
-        </ul>
-        <a href="#contacto" class="service-link">Consultar <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="service-card featured" id="svc-2">
-        <div class="service-icon-wrap">
-          <i class="fa-solid fa-road"></i>
-        </div>
-        <h3>Obras Viales</h3>
-        <p>Diseño y construcción de carreteras, autopistas, caminos rurales y obras de pavimentación con los más altos estándares técnicos.</p>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Diseño geométrico vial</li>
-          <li><i class="fa-solid fa-check"></i> Pavimentación urbana</li>
-          <li><i class="fa-solid fa-check"></i> Supervisión de obras</li>
-        </ul>
-        <a href="#contacto" class="service-link">Consultar <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="service-card" id="svc-3">
-        <div class="service-icon-wrap">
-          <i class="fa-solid fa-water"></i>
-        </div>
-        <h3>Obras Hidráulicas</h3>
-        <p>Proyectos de drenaje, alcantarillado, canales de riego y obras de contención de aguas con enfoque en sustentabilidad.</p>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Diseño de canales</li>
-          <li><i class="fa-solid fa-check"></i> Sistemas de drenaje</li>
-          <li><i class="fa-solid fa-check"></i> Obras de contención</li>
-        </ul>
-        <a href="#contacto" class="service-link">Consultar <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="service-card" id="svc-4">
-        <div class="service-icon-wrap">
-          <i class="fa-solid fa-hard-hat"></i>
-        </div>
-        <h3>Infraestructura Civil</h3>
-        <p>Construcción de puentes, túneles, muros de contención y obras de arte para proyectos de infraestructura a gran escala.</p>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Puentes y viaductos</li>
-          <li><i class="fa-solid fa-check"></i> Túneles</li>
-          <li><i class="fa-solid fa-check"></i> Muros de contención</li>
-        </ul>
-        <a href="#contacto" class="service-link">Consultar <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="service-card" id="svc-5">
-        <div class="service-icon-wrap">
-          <i class="fa-solid fa-drafting-compass"></i>
-        </div>
-        <h3>Asesoría y Diseño</h3>
-        <p>Consultoría técnica especializada, elaboración de proyectos de ingeniería y supervisión técnica independiente para sus obras.</p>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> Proyectos de ingeniería</li>
-          <li><i class="fa-solid fa-check"></i> ITO independiente</li>
-          <li><i class="fa-solid fa-check"></i> Asesoría normativa</li>
-        </ul>
-        <a href="#contacto" class="service-link">Consultar <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="service-card" id="svc-6">
-        <div class="service-icon-wrap">
-          <i class="fa-solid fa-leaf"></i>
-        </div>
-        <h3>Gestión Ambiental</h3>
-        <p>Evaluación de impacto ambiental, planes de manejo y mitigación, y cumplimiento de normativas ambientales para proyectos de construcción.</p>
-        <ul class="service-list">
-          <li><i class="fa-solid fa-check"></i> DGA & SEIA</li>
-          <li><i class="fa-solid fa-check"></i> Planes de manejo</li>
-          <li><i class="fa-solid fa-check"></i> Monitoreo ambiental</li>
-        </ul>
-        <a href="#contacto" class="service-link">Consultar <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ PROYECTOS ══════════════════ -->
-  <section class="projects" id="proyectos">
-    <div class="section-header light">
-      <span class="section-tag">Nuestro trabajo</span>
-      <h2 class="section-title">Proyectos <span class="text-accent">Destacados</span></h2>
-      <p class="section-desc">Una selección de los proyectos más significativos que hemos desarrollado a lo largo de nuestra trayectoria.</p>
-    </div>
-
-    <div class="projects-grid">
-      <div class="project-card large" id="proj-1">
-        <img src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/dam_project_1773019024278.png" alt="Proyecto Presa El Toro" loading="lazy" />
-        <div class="project-overlay">
-          <div class="project-tag">Obras Hidráulicas</div>
-          <h3>Presa El Toro — Región del Biobío</h3>
-          <p>Diseño y supervisión de obras de contención hidráulica en complejo terreno montañoso.</p>
-          <a href="#contacto" class="project-btn">Ver detalles</a>
-        </div>
-      </div>
-
-      <div class="project-card" id="proj-2">
-        <img src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/geo_survey_1773019011278.png" alt="Estudio geotécnico Atacama" loading="lazy" />
-        <div class="project-overlay">
-          <div class="project-tag">Geotecnia</div>
-          <h3>Estudio Geotécnico Atacama</h3>
-          <p>Caracterización del subsuelo en zona desértica para proyecto minero a gran escala.</p>
-          <a href="#contacto" class="project-btn">Ver detalles</a>
-        </div>
-      </div>
-
-      <div class="project-card" id="proj-3">
-        <img src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/tunnel_project_1773019040046.png" alt="Túnel Ruta 68" loading="lazy" />
-        <div class="project-overlay">
-          <div class="project-tag">Infraestructura Civil</div>
-          <h3>Túnel Ruta 68 — Valparaíso</h3>
-          <p>Excavación y revestimiento de túnel de 1.2 km en roca dura y variable.</p>
-          <a href="#contacto" class="project-btn">Ver detalles</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="projects-cta">
-      <a href="#contacto" class="btn-primary">Ver Todos los Proyectos <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-  </section>
-
-  <!-- ══════════════════ NOSOTROS ══════════════════ -->
-  <section class="about" id="nosotros">
-    <div class="about-content">
-      <div class="about-text">
-        <span class="section-tag">Quiénes somos</span>
-        <h2 class="section-title">Más de dos décadas<br/><span class="text-accent">construyendo Chile</span></h2>
-        <p>Fundada en 1999, Geoingeniería Ltda es una empresa chilena de ingeniería especializada en obras civiles, geotecnia e infraestructura. Trabajamos con entidades públicas y privadas en proyectos de alta complejidad técnica a lo largo de todo el país.</p>
-        <p>Nuestro equipo de más de 80 profesionales combina experiencia en terreno con tecnología de punta para entregar proyectos dentro de plazos y presupuestos acordados.</p>
-
-        <div class="about-values">
-          <div class="value-item">
-            <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <div>
-              <h4>Seguridad</h4>
-              <p>Cero tolerancia a accidentes en todas nuestras obras y operaciones.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon"><i class="fa-solid fa-microscope"></i></div>
-            <div>
-              <h4>Rigor Técnico</h4>
-              <p>Estándares de calidad certificados bajo ISO 9001:2015.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
-            <div>
-              <h4>Compromiso</h4>
-              <p>Cumplimiento de plazos y presupuestos garantizado contractualmente.</p>
-            </div>
-          </div>
-        </div>
-
-        <a href="#contacto" class="btn-primary">Trabaja con Nosotros <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-
-      <div class="about-visual">
-        <div class="about-img-wrap">
-          <img src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/geo_survey_1773019011278.png" alt="Equipo Geoingeniería Ltda" />
-          <div class="about-badge">
-            <span class="about-badge-num">ISO</span>
-            <span class="about-badge-text">9001:2015<br/>Certificados</span>
-          </div>
-        </div>
-        <div class="about-certifications">
-          <div class="cert-item"><i class="fa-solid fa-certificate"></i> Certificación ISO 9001:2015</div>
-          <div class="cert-item"><i class="fa-solid fa-certificate"></i> Registro BNE — MOP</div>
-          <div class="cert-item"><i class="fa-solid fa-certificate"></i> Acreditación SERNAGEOMIN</div>
-          <div class="cert-item"><i class="fa-solid fa-certificate"></i> Proveedor ENAP & CODELCO</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ CLIENTES ══════════════════ -->
-  <section class="clients">
-    <div class="clients-inner">
-      <p class="clients-label">Confiamos en nosotros</p>
-      <div class="clients-logos">
-        <div class="client-logo">MOP</div>
-        <div class="client-logo">CODELCO</div>
-        <div class="client-logo">ENAP</div>
-        <div class="client-logo">GORE Biobío</div>
-        <div class="client-logo">Serviu</div>
-        <div class="client-logo">AES Gener</div>
-        <div class="client-logo">MOP</div>
-        <div class="client-logo">CODELCO</div>
-        <div class="client-logo">ENAP</div>
-        <div class="client-logo">GORE Biobío</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ CONTACTO ══════════════════ -->
-  <section class="contact" id="contacto">
-    <div class="section-header">
-      <span class="section-tag">Contáctenos</span>
-      <h2 class="section-title">¿Tiene un <span class="text-accent">Proyecto</span> en mente?</h2>
-      <p class="section-desc">Complete el formulario y nuestro equipo técnico se comunicará con usted dentro de las próximas 24 horas.</p>
-    </div>
-
-    <div class="contact-grid">
-      <form class="contact-form" id="contact-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Nombre completo *</label>
-            <input type="text" id="name" name="name" placeholder="Ej.: Carlos Muñoz" required />
-          </div>
-          <div class="form-group">
-            <label for="company">Empresa</label>
-            <input type="text" id="company" name="company" placeholder="Ej.: Constructora XYZ Ltda" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Correo electrónico *</label>
-            <input type="email" id="email" name="email" placeholder="correo@empresa.cl" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone" placeholder="+56 9 1234 5678" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="service">Servicio de interés *</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Seleccione un servicio…</option>
-            <option>Estudios Geotécnicos</option>
-            <option>Obras Viales</option>
-            <option>Obras Hidráulicas</option>
-            <option>Infraestructura Civil</option>
-            <option>Asesoría y Diseño</option>
-            <option>Gestión Ambiental</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Descripción del proyecto *</label>
-          <textarea id="message" name="message" rows="5" placeholder="Cuéntenos brevemente sobre su proyecto, ubicación, plazo estimado y cualquier detalle relevante…" required></textarea>
-        </div>
-        <button type="submit" class="btn-primary form-submit" id="submit-btn">
-          Enviar Consulta <i class="fa-solid fa-paper-plane"></i>
-        </button>
-        <div class="form-success" id="form-success">
-          <i class="fa-solid fa-circle-check"></i>
-          ¡Consulta enviada! Nos contactaremos pronto.
-        </div>
-      </form>
-
-      <div class="contact-info">
-        <div class="info-card">
-          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <h4>Oficina Central</h4>
-            <p>Av. Providencia 1234, Of. 501<br/>Santiago, Región Metropolitana</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <h4>Teléfono</h4>
-            <p>+56 2 2345 6789<br/>+56 9 8765 4321</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div>
-            <h4>Correo</h4>
-            <p>contacto@geoingenieria.cl<br/>proyectos@geoingenieria.cl</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
-          <div>
-            <h4>Horario de atención</h4>
-            <p>Lunes a Viernes: 8:30 – 18:00<br/>Sábado: 9:00 – 13:00</p>
-          </div>
-        </div>
-
-        <div class="social-row">
-          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ FOOTER ══════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
+    <!-- ══════════════════ NAVBAR ══════════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
         <a href="#inicio" class="nav-logo">
           <div class="logo-icon">
-            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-              <polygon points="18,2 34,30 2,30" stroke="#E8A838" stroke-width="2.5" fill="none"/>
-              <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"/>
-              <line x1="18" y1="2" x2="18" y2="30" stroke="#E8A838" stroke-width="1.5" opacity="0.7"/>
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              aria-hidden="true"
+            >
+              <polygon
+                points="18,2 34,30 2,30"
+                stroke="#E8A838"
+                stroke-width="2.5"
+                fill="none"
+              />
+              <polygon
+                points="18,10 28,28 8,28"
+                fill="#E8A838"
+                opacity="0.25"
+              />
+              <line
+                x1="18"
+                y1="2"
+                x2="18"
+                y2="30"
+                stroke="#E8A838"
+                stroke-width="1.5"
+                opacity="0.7"
+              />
             </svg>
           </div>
           <div class="logo-text">
@@ -425,154 +61,770 @@
             <span class="logo-sub">Ltda</span>
           </div>
         </a>
-        <p>Ingeniería que transforma el territorio. Más de 25 años de experiencia en proyectos de infraestructura a lo largo de Chile.</p>
-      </div>
 
-      <div class="footer-links">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="#servicios">Estudios Geotécnicos</a></li>
-          <li><a href="#servicios">Obras Viales</a></li>
-          <li><a href="#servicios">Obras Hidráulicas</a></li>
-          <li><a href="#servicios">Infraestructura Civil</a></li>
-          <li><a href="#servicios">Gestión Ambiental</a></li>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#main-content" class="nav-link">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
+
+        <a href="#contacto" class="nav-cta">Cotizar Proyecto</a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menú de navegación"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="hero" id="main-content" aria-label="Inicio">
+      <div class="hero-bg">
+        <img
+          src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/hero_construction_1773018997979.png"
+          alt="Obras de ingeniería civil"
+          class="hero-img"
+        />
+        <div class="hero-overlay"></div>
       </div>
 
-      <div class="footer-links">
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="#nosotros">Quiénes somos</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#">Trabaja con nosotros</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-newsletter">
-        <h4>Boletín Informativo</h4>
-        <p>Suscríbase para recibir noticias sobre proyectos e innovaciones en ingeniería.</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="su@correo.cl" aria-label="Correo para newsletter" />
-          <button type="button" aria-label="Suscribirse"><i class="fa-solid fa-arrow-right"></i></button>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Más de 25 años de experiencia
+        </div>
+        <h1 class="hero-title">
+          Ingeniería que<br />
+          <span class="hero-accent">Transforma</span><br />
+          el Territorio
+        </h1>
+        <p class="hero-desc">
+          Soluciones especializadas en geotecnia, obras civiles e
+          infraestructura vial, diseñadas con precisión técnica e innovación
+          para los proyectos más exigentes de Chile y Latinoamérica.
+        </p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn-primary"
+            >Ver Proyectos <i class="fa-solid fa-arrow-right"></i
+          ></a>
+          <a href="#servicios" class="btn-outline">Nuestros Servicios</a>
         </div>
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <p>© 2024 Geoingeniería Ltda. Todos los derechos reservados.</p>
-      <p>RUT: 76.543.210-K | Santiago, Chile</p>
-    </div>
-  </footer>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">+350</span>
+          <span class="stat-label">Proyectos completados</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Regiones en Chile</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Clientes satisfechos</span>
+        </div>
+      </div>
 
-  <script>
-    // ── Navbar scroll effect ──
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
+      <div class="hero-scroll">
+        <span>Descubrir más</span>
+        <div class="scroll-arrow">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </section>
 
-    // ── Hamburger menu ──
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('open');
+    <!-- ══════════════════ SERVICIOS ══════════════════ -->
+    <section class="services" id="servicios">
+      <div class="section-header">
+        <span class="section-tag">Lo que hacemos</span>
+        <h2 class="section-title">
+          Nuestros <span class="text-accent">Servicios</span>
+        </h2>
+        <p class="section-desc">
+          Ofrecemos soluciones integrales en ingeniería geotécnica y obras
+          civiles, respaldadas por tecnología de punta y un equipo de
+          profesionales altamente calificados.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" id="svc-1">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-mountain"></i>
+          </div>
+          <h3>Estudios Geotécnicos</h3>
+          <p>
+            Investigación del subsuelo, análisis de mecánica de suelos, sondajes
+            y caracterización geológica para proyectos de todo tipo.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Sondajes y calicatas</li>
+            <li><i class="fa-solid fa-check"></i> Ensayos SPT & CPT</li>
+            <li><i class="fa-solid fa-check"></i> Informes geotécnicos</li>
+          </ul>
+          <a href="#contacto" class="service-link"
+            >Consultar <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="service-card featured" id="svc-2">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-road"></i>
+          </div>
+          <h3>Obras Viales</h3>
+          <p>
+            Diseño y construcción de carreteras, autopistas, caminos rurales y
+            obras de pavimentación con los más altos estándares técnicos.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Diseño geométrico vial</li>
+            <li><i class="fa-solid fa-check"></i> Pavimentación urbana</li>
+            <li><i class="fa-solid fa-check"></i> Supervisión de obras</li>
+          </ul>
+          <a href="#contacto" class="service-link"
+            >Consultar <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="service-card" id="svc-3">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <h3>Obras Hidráulicas</h3>
+          <p>
+            Proyectos de drenaje, alcantarillado, canales de riego y obras de
+            contención de aguas con enfoque en sustentabilidad.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Diseño de canales</li>
+            <li><i class="fa-solid fa-check"></i> Sistemas de drenaje</li>
+            <li><i class="fa-solid fa-check"></i> Obras de contención</li>
+          </ul>
+          <a href="#contacto" class="service-link"
+            >Consultar <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="service-card" id="svc-4">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-hard-hat"></i>
+          </div>
+          <h3>Infraestructura Civil</h3>
+          <p>
+            Construcción de puentes, túneles, muros de contención y obras de
+            arte para proyectos de infraestructura a gran escala.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Puentes y viaductos</li>
+            <li><i class="fa-solid fa-check"></i> Túneles</li>
+            <li><i class="fa-solid fa-check"></i> Muros de contención</li>
+          </ul>
+          <a href="#contacto" class="service-link"
+            >Consultar <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="service-card" id="svc-5">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-drafting-compass"></i>
+          </div>
+          <h3>Asesoría y Diseño</h3>
+          <p>
+            Consultoría técnica especializada, elaboración de proyectos de
+            ingeniería y supervisión técnica independiente para sus obras.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Proyectos de ingeniería</li>
+            <li><i class="fa-solid fa-check"></i> ITO independiente</li>
+            <li><i class="fa-solid fa-check"></i> Asesoría normativa</li>
+          </ul>
+          <a href="#contacto" class="service-link"
+            >Consultar <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="service-card" id="svc-6">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3>Gestión Ambiental</h3>
+          <p>
+            Evaluación de impacto ambiental, planes de manejo y mitigación, y
+            cumplimiento de normativas ambientales para proyectos de
+            construcción.
+          </p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> DGA & SEIA</li>
+            <li><i class="fa-solid fa-check"></i> Planes de manejo</li>
+            <li><i class="fa-solid fa-check"></i> Monitoreo ambiental</li>
+          </ul>
+          <a href="#contacto" class="service-link"
+            >Consultar <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ PROYECTOS ══════════════════ -->
+    <section class="projects" id="proyectos">
+      <div class="section-header light">
+        <span class="section-tag">Nuestro trabajo</span>
+        <h2 class="section-title">
+          Proyectos <span class="text-accent">Destacados</span>
+        </h2>
+        <p class="section-desc">
+          Una selección de los proyectos más significativos que hemos
+          desarrollado a lo largo de nuestra trayectoria.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card large" id="proj-1">
+          <img
+            src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/dam_project_1773019024278.png"
+            alt="Proyecto Presa El Toro"
+            loading="lazy"
+          />
+          <div class="project-overlay">
+            <div class="project-tag">Obras Hidráulicas</div>
+            <h3>Presa El Toro — Región del Biobío</h3>
+            <p>
+              Diseño y supervisión de obras de contención hidráulica en complejo
+              terreno montañoso.
+            </p>
+            <a href="#contacto" class="project-btn">Ver detalles</a>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-2">
+          <img
+            src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/geo_survey_1773019011278.png"
+            alt="Estudio geotécnico Atacama"
+            loading="lazy"
+          />
+          <div class="project-overlay">
+            <div class="project-tag">Geotecnia</div>
+            <h3>Estudio Geotécnico Atacama</h3>
+            <p>
+              Caracterización del subsuelo en zona desértica para proyecto
+              minero a gran escala.
+            </p>
+            <a href="#contacto" class="project-btn">Ver detalles</a>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-3">
+          <img
+            src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/tunnel_project_1773019040046.png"
+            alt="Túnel Ruta 68"
+            loading="lazy"
+          />
+          <div class="project-overlay">
+            <div class="project-tag">Infraestructura Civil</div>
+            <h3>Túnel Ruta 68 — Valparaíso</h3>
+            <p>
+              Excavación y revestimiento de túnel de 1.2 km en roca dura y
+              variable.
+            </p>
+            <a href="#contacto" class="project-btn">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-cta">
+        <a href="#contacto" class="btn-primary"
+          >Ver Todos los Proyectos <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- ══════════════════ NOSOTROS ══════════════════ -->
+    <section class="about" id="nosotros">
+      <div class="about-content">
+        <div class="about-text">
+          <span class="section-tag">Quiénes somos</span>
+          <h2 class="section-title">
+            Más de dos décadas<br /><span class="text-accent"
+              >construyendo Chile</span
+            >
+          </h2>
+          <p>
+            Fundada en 1999, Geoingeniería Ltda es una empresa chilena de
+            ingeniería especializada en obras civiles, geotecnia e
+            infraestructura. Trabajamos con entidades públicas y privadas en
+            proyectos de alta complejidad técnica a lo largo de todo el país.
+          </p>
+          <p>
+            Nuestro equipo de más de 80 profesionales combina experiencia en
+            terreno con tecnología de punta para entregar proyectos dentro de
+            plazos y presupuestos acordados.
+          </p>
+
+          <div class="about-values">
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <h4>Seguridad</h4>
+                <p>
+                  Cero tolerancia a accidentes en todas nuestras obras y
+                  operaciones.
+                </p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fa-solid fa-microscope"></i>
+              </div>
+              <div>
+                <h4>Rigor Técnico</h4>
+                <p>Estándares de calidad certificados bajo ISO 9001:2015.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <div>
+                <h4>Compromiso</h4>
+                <p>
+                  Cumplimiento de plazos y presupuestos garantizado
+                  contractualmente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contacto" class="btn-primary"
+            >Trabaja con Nosotros <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-img-wrap">
+            <img
+              src="C:/Users/ASUS/.gemini/antigravity/brain/7b4ce30d-bba5-4941-a6cc-9c305447614c/geo_survey_1773019011278.png"
+              alt="Equipo Geoingeniería Ltda"
+            />
+            <div class="about-badge">
+              <span class="about-badge-num">ISO</span>
+              <span class="about-badge-text">9001:2015<br />Certificados</span>
+            </div>
+          </div>
+          <div class="about-certifications">
+            <div class="cert-item">
+              <i class="fa-solid fa-certificate"></i> Certificación ISO
+              9001:2015
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-certificate"></i> Registro BNE — MOP
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-certificate"></i> Acreditación SERNAGEOMIN
+            </div>
+            <div class="cert-item">
+              <i class="fa-solid fa-certificate"></i> Proveedor ENAP & CODELCO
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ CLIENTES ══════════════════ -->
+    <section class="clients" aria-label="Clientes destacados">
+      <div class="clients-inner">
+        <p class="clients-label">Confiamos en nosotros</p>
+        <div class="clients-logos">
+          <div class="client-logo">MOP</div>
+          <div class="client-logo">CODELCO</div>
+          <div class="client-logo">ENAP</div>
+          <div class="client-logo">GORE Biobío</div>
+          <div class="client-logo">Serviu</div>
+          <div class="client-logo">AES Gener</div>
+          <div class="client-logo">MOP</div>
+          <div class="client-logo">CODELCO</div>
+          <div class="client-logo">ENAP</div>
+          <div class="client-logo">GORE Biobío</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ CONTACTO ══════════════════ -->
+    <section class="contact" id="contacto">
+      <div class="section-header">
+        <span class="section-tag">Contáctenos</span>
+        <h2 class="section-title">
+          ¿Tiene un <span class="text-accent">Proyecto</span> en mente?
+        </h2>
+        <p class="section-desc">
+          Complete el formulario y nuestro equipo técnico se comunicará con
+          usted dentro de las próximas 24 horas.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nombre completo *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ej.: Carlos Muñoz"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="company">Empresa</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Ej.: Constructora XYZ Ltda"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="correo@empresa.cl"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+56 9 1234 5678"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Servicio de interés *</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>
+                Seleccione un servicio…
+              </option>
+              <option>Estudios Geotécnicos</option>
+              <option>Obras Viales</option>
+              <option>Obras Hidráulicas</option>
+              <option>Infraestructura Civil</option>
+              <option>Asesoría y Diseño</option>
+              <option>Gestión Ambiental</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Descripción del proyecto *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Cuéntenos brevemente sobre su proyecto, ubicación, plazo estimado y cualquier detalle relevante…"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit" id="submit-btn">
+            Enviar Consulta <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <div class="form-success" id="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            ¡Consulta enviada! Nos contactaremos pronto.
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h4>Oficina Central</h4>
+              <p>
+                Av. Providencia 1234, Of. 501<br />Santiago, Región
+                Metropolitana
+              </p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h4>Teléfono</h4>
+              <p>+56 2 2345 6789<br />+56 9 8765 4321</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Correo</h4>
+              <p>contacto@geoingenieria.cl<br />proyectos@geoingenieria.cl</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>Horario de atención</h4>
+              <p>Lunes a Viernes: 8:30 – 18:00<br />Sábado: 9:00 – 13:00</p>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="#" class="social-btn" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-btn" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#inicio" class="nav-logo">
+            <div class="logo-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 36 36"
+                fill="none"
+                aria-hidden="true"
+              >
+                <polygon
+                  points="18,2 34,30 2,30"
+                  stroke="#E8A838"
+                  stroke-width="2.5"
+                  fill="none"
+                />
+                <polygon
+                  points="18,10 28,28 8,28"
+                  fill="#E8A838"
+                  opacity="0.25"
+                />
+                <line
+                  x1="18"
+                  y1="2"
+                  x2="18"
+                  y2="30"
+                  stroke="#E8A838"
+                  stroke-width="1.5"
+                  opacity="0.7"
+                />
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">Geoingeniería</span>
+              <span class="logo-sub">Ltda</span>
+            </div>
+          </a>
+          <p>
+            Ingeniería que transforma el territorio. Más de 25 años de
+            experiencia en proyectos de infraestructura a lo largo de Chile.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Estudios Geotécnicos</a></li>
+            <li><a href="#servicios">Obras Viales</a></li>
+            <li><a href="#servicios">Obras Hidráulicas</a></li>
+            <li><a href="#servicios">Infraestructura Civil</a></li>
+            <li><a href="#servicios">Gestión Ambiental</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#nosotros">Quiénes somos</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#">Trabaja con nosotros</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Boletín Informativo</h4>
+          <p>
+            Suscríbase para recibir noticias sobre proyectos e innovaciones en
+            ingeniería.
+          </p>
+          <div class="newsletter-form">
+            <input
+              type="email"
+              placeholder="su@correo.cl"
+              aria-label="Correo para newsletter"
+            />
+            <button type="button" aria-label="Suscribirse">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Geoingeniería Ltda. Todos los derechos reservados.</p>
+        <p>RUT: 76.543.210-K | Santiago, Chile</p>
+      </div>
+    </footer>
+
+    <script>
+      // ── Navbar scroll effect ──
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 60);
       });
-    });
 
-    // ── Active nav link on scroll ──
-    const sections = document.querySelectorAll('section[id]');
-    const navLinkEls = document.querySelectorAll('.nav-link');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinkEls.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
+      // ── Hamburger menu ──
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+      hamburger.addEventListener("click", () => {
+        const expanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!expanded));
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("open");
       });
-    }, { threshold: 0.4 });
-    sections.forEach(s => observer.observe(s));
-
-    // ── Scroll-reveal animation ──
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          hamburger.setAttribute("aria-expanded", "false");
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("open");
+        });
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .project-card, .value-item, .info-card, .about-img-wrap').forEach(el => {
-      el.classList.add('reveal');
-      revealObserver.observe(el);
-    });
 
-    // ── Counter animation ──
-    function animateCounter(el, target, suffix) {
-      let count = 0;
-      const step = Math.ceil(target / 60);
-      const interval = setInterval(() => {
-        count = Math.min(count + step, target);
-        el.textContent = (suffix === '%' ? '+' : '+') + count + suffix;
-        if (count >= target) clearInterval(interval);
-      }, 25);
-    }
-    const statsObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.stat-number').forEach(el => {
-            const text = el.textContent;
-            const num = parseInt(text.replace(/\D/g, ''));
-            const suffix = text.includes('%') ? '%' : '';
-            el.textContent = '0';
-            animateCounter(el, num, suffix);
+      // ── Active nav link on scroll ──
+      const sections = document.querySelectorAll("section[id]");
+      const navLinkEls = document.querySelectorAll(".nav-link");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinkEls.forEach((l) => l.classList.remove("active"));
+              const active = document.querySelector(
+                `.nav-link[href="#${entry.target.id}"]`,
+              );
+              if (active) active.classList.add("active");
+            }
           });
-          statsObserver.disconnect();
-        }
+        },
+        { threshold: 0.4 },
+      );
+      sections.forEach((s) => observer.observe(s));
+
+      // ── Scroll-reveal animation ──
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(
+          ".service-card, .project-card, .value-item, .info-card, .about-img-wrap",
+        )
+        .forEach((el) => {
+          el.classList.add("reveal");
+          revealObserver.observe(el);
+        });
+
+      // ── Counter animation ──
+      function animateCounter(el, target, suffix) {
+        let count = 0;
+        const step = Math.ceil(target / 60);
+        const interval = setInterval(() => {
+          count = Math.min(count + step, target);
+          el.textContent = (suffix === "%" ? "+" : "+") + count + suffix;
+          if (count >= target) clearInterval(interval);
+        }, 25);
+      }
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              document.querySelectorAll(".stat-number").forEach((el) => {
+                const text = el.textContent;
+                const num = parseInt(text.replace(/\D/g, ""));
+                const suffix = text.includes("%") ? "%" : "";
+                el.textContent = "0";
+                animateCounter(el, num, suffix);
+              });
+              statsObserver.disconnect();
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      const statsEl = document.querySelector(".hero-stats");
+      if (statsEl) statsObserver.observe(statsEl);
+
+      // ── Logo marquee (clients) ──
+      const logoStrip = document.querySelector(".clients-logos");
+      if (logoStrip) {
+        logoStrip.innerHTML += logoStrip.innerHTML;
+      }
+
+      // ── Contact form feedback ──
+      const form = document.getElementById("contact-form");
+      const successMsg = document.getElementById("form-success");
+      const submitBtn = document.getElementById("submit-btn");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerHTML =
+          '<i class="fa-solid fa-spinner fa-spin"></i> Enviando…';
+        setTimeout(() => {
+          submitBtn.style.display = "none";
+          successMsg.style.display = "flex";
+          form.reset();
+        }, 1800);
       });
-    }, { threshold: 0.5 });
-    const statsEl = document.querySelector('.hero-stats');
-    if (statsEl) statsObserver.observe(statsEl);
 
-    // ── Logo marquee (clients) ──
-    const logoStrip = document.querySelector('.clients-logos');
-    if (logoStrip) {
-      logoStrip.innerHTML += logoStrip.innerHTML;
-    }
-
-    // ── Contact form feedback ──
-    const form = document.getElementById('contact-form');
-    const successMsg = document.getElementById('form-success');
-    const submitBtn = document.getElementById('submit-btn');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando…';
-      setTimeout(() => {
-        submitBtn.style.display = 'none';
-        successMsg.style.display = 'flex';
-        form.reset();
-      }, 1800);
-    });
-
-    // ── Smooth scroll for all links ──
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+      // ── Smooth scroll for all links ──
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

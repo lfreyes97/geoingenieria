@@ -2,7 +2,7 @@
 // Hero component — Geoingeniería Ltda
 ---
 
-<section class="hero" id="inicio">
+<section class="hero" id="main-content" aria-label="Inicio">
   <div class="bg">
     <img
       src="/images/hero_construction.png"
@@ -29,7 +29,7 @@
     </p>
     <div class="actions">
       <a href="#proyectos" class="btn-primary">
-        Ver Proyectos <i class="fa-solid fa-arrow-right"></i>
+        Ver Proyectos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
       <a href="#servicios" class="btn-outline">Nuestros Servicios</a>
     </div>
@@ -37,22 +37,30 @@
 
   <div class="stats" data-hero-stats>
     <div class="statItem">
-      <span class="statNumber" data-stat-number data-target="350" data-suffix="">+350</span>
+      <span class="statNumber" data-stat-number data-target="350" data-suffix=""
+        >+350</span
+      >
       <span class="statLabel">Proyectos completados</span>
     </div>
     <div class="statDivider"></div>
     <div class="statItem">
-      <span class="statNumber" data-stat-number data-target="25" data-suffix="+">25+</span>
+      <span class="statNumber" data-stat-number data-target="25" data-suffix="+"
+        >25+</span
+      >
       <span class="statLabel">Años de experiencia</span>
     </div>
     <div class="statDivider"></div>
     <div class="statItem">
-      <span class="statNumber" data-stat-number data-target="12" data-suffix="">12</span>
+      <span class="statNumber" data-stat-number data-target="12" data-suffix=""
+        >12</span
+      >
       <span class="statLabel">Departamentos en Colombia</span>
     </div>
     <div class="statDivider"></div>
     <div class="statItem">
-      <span class="statNumber" data-stat-number data-target="98" data-suffix="%">98%</span>
+      <span class="statNumber" data-stat-number data-target="98" data-suffix="%"
+        >98%</span
+      >
       <span class="statLabel">Clientes satisfechos</span>
     </div>
   </div>
@@ -60,7 +68,7 @@
   <div class="scroll">
     <span>Descubrir más</span>
     <div class="scrollArrow">
-      <i class="fa-solid fa-chevron-down"></i>
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
     </div>
   </div>
 </section>
@@ -72,25 +80,30 @@
     const step = Math.ceil(target / 60);
     const interval = setInterval(() => {
       count = Math.min(count + step, target);
-      el.textContent = '+' + count + suffix;
+      el.textContent = "+" + count + suffix;
       if (count >= target) clearInterval(interval);
     }, 25);
   }
 
-  const statsObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        document.querySelectorAll<HTMLElement>('[data-stat-number]').forEach(el => {
-          const target = parseInt(el.dataset.target || '0');
-          const suffix = el.dataset.suffix || '';
-          el.textContent = '0';
-          animateCounter(el, target, suffix);
-        });
-        statsObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document
+            .querySelectorAll<HTMLElement>("[data-stat-number]")
+            .forEach((el) => {
+              const target = parseInt(el.dataset.target || "0");
+              const suffix = el.dataset.suffix || "";
+              el.textContent = "0";
+              animateCounter(el, target, suffix);
+            });
+          statsObserver.disconnect();
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-  const statsEl = document.querySelector('[data-hero-stats]');
+  const statsEl = document.querySelector("[data-hero-stats]");
   if (statsEl) statsObserver.observe(statsEl);
 </script>

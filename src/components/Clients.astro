@@ -1,15 +1,26 @@
 ---
 // Clients marquee component — Geoingeniería Ltda
-const clients = ['MOP', 'CODELCO', 'ENAP', 'GORE Biobío', 'Serviu', 'AES Gener'];
+const clients = [
+  "MOP",
+  "CODELCO",
+  "ENAP",
+  "GORE Biobío",
+  "Serviu",
+  "AES Gener",
+];
 ---
 
-<section class="clients">
+<section class="clients" aria-label="Clientes destacados">
   <div class="inner">
     <p class="label">Confían en nosotros</p>
     <div class="logos">
-      {[...clients, ...clients].map((c, i) => (
-        <span class="logo" key={i}>{c}</span>
-      ))}
+      {
+        [...clients, ...clients].map((c, i) => (
+          <span class="logo" key={i}>
+            {c}
+          </span>
+        ))
+      }
     </div>
   </div>
 </section>

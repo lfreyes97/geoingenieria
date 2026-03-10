@@ -1,20 +1,38 @@
 ---
 // Navbar component — Geoingeniería Ltda
-import ThemeToggle from './ThemeToggle.astro';
+import ThemeToggle from "./ThemeToggle.astro";
 
 // Usamos el path actual para saber si estamos en el index o no
 const currentPath = Astro.url.pathname;
-const isHome = currentPath === '/' || currentPath === '/index.html';
+const isHome = currentPath === "/" || currentPath === "/index.html";
 ---
 
 <nav class="navbar" id="navbar">
   <div class="container">
     <a href={isHome ? "#inicio" : "/#inicio"} class="logo">
       <div class="logoIcon">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-          <polygon points="18,2 34,30 2,30" stroke="#E8A838" stroke-width="2.5" fill="none"/>
-          <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"/>
-          <line x1="18" y1="2" x2="18" y2="30" stroke="#E8A838" stroke-width="1.5" opacity="0.7"/>
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 36 36"
+          fill="none"
+          aria-hidden="true"
+        >
+          <polygon
+            points="18,2 34,30 2,30"
+            stroke="#E8A838"
+            stroke-width="2.5"
+            fill="none"></polygon>
+          <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"
+          ></polygon>
+          <line
+            x1="18"
+            y1="2"
+            x2="18"
+            y2="30"
+            stroke="#E8A838"
+            stroke-width="1.5"
+            opacity="0.7"></line>
         </svg>
       </div>
       <div class="logoText">
@@ -24,18 +42,42 @@ const isHome = currentPath === '/' || currentPath === '/index.html';
     </a>
 
     <ul class="links" id="nav-links">
-      <li><a href={isHome ? "#inicio" : "/#inicio"} class="link" data-nav-link>Inicio</a></li>
-      <li><a href={isHome ? "#servicios" : "/#servicios"} class="link" data-nav-link>Servicios</a></li>
-      <li><a href={isHome ? "#proyectos" : "/#proyectos"} class="link" data-nav-link>Proyectos</a></li>
-      <li><a href={isHome ? "#nosotros" : "/#nosotros"} class="link" data-nav-link>Nosotros</a></li>
+      <li>
+        <a href={isHome ? "#inicio" : "/#inicio"} class="link" data-nav-link
+          >Inicio</a>
+      </li>
+      <li>
+        <a
+          href={isHome ? "#servicios" : "/#servicios"}
+          class="link"
+          data-nav-link>Servicios</a>
+      </li>
+      <li>
+        <a
+          href={isHome ? "#proyectos" : "/#proyectos"}
+          class="link"
+          data-nav-link>Proyectos</a>
+      </li>
+      <li>
+        <a href={isHome ? "#nosotros" : "/#nosotros"} class="link" data-nav-link
+          >Nosotros</a>
+      </li>
       <li><a href="/contacto" class="link" data-nav-link>Contacto</a></li>
     </ul>
 
     <a href="/contacto" class="cta">Cotizar Proyecto</a>
 
-    <ThemeToggle classes={{ toggle: "themeToggle", sun: "iconSun", moon: "iconMoon" }} />
+    <ThemeToggle
+      classes={{ toggle: "themeToggle", sun: "iconSun", moon: "iconMoon" }}
+    />
 
-    <button class="hamburger" id="hamburger" aria-label="Menú">
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Menú de navegación"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -43,74 +85,83 @@ const isHome = currentPath === '/' || currentPath === '/index.html';
 
 <script>
   // Navbar scroll effect
-  const navbar = document.getElementById('navbar')!;
-  window.addEventListener('scroll', () => {
+  const navbar = document.getElementById("navbar")!;
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 60) {
-      navbar.setAttribute('data-scrolled', 'true');
+      navbar.setAttribute("data-scrolled", "true");
     } else {
-      navbar.removeAttribute('data-scrolled');
+      navbar.removeAttribute("data-scrolled");
     }
   });
 
   // Hamburger menu
-  const hamburger = document.getElementById('hamburger')!;
-  const navLinks = document.getElementById('nav-links')!;
-  
-  hamburger.addEventListener('click', () => {
-    const isActive = hamburger.toggleAttribute('data-active');
+  const hamburger = document.getElementById("hamburger")!;
+  const navLinks = document.getElementById("nav-links")!;
+
+  hamburger.addEventListener("click", () => {
+    const isActive = hamburger.toggleAttribute("data-active");
+    hamburger.setAttribute("aria-expanded", String(isActive));
     if (isActive) {
-      navLinks.setAttribute('data-open', 'true');
+      navLinks.setAttribute("data-open", "true");
     } else {
-      navLinks.removeAttribute('data-open');
+      navLinks.removeAttribute("data-open");
     }
   });
-  
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.removeAttribute('data-active');
-      navLinks.removeAttribute('data-open');
+
+  navLinks.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      hamburger.removeAttribute("data-active");
+      hamburger.setAttribute("aria-expanded", "false");
+      navLinks.removeAttribute("data-open");
     });
   });
 
   // Active nav link on scroll (only if sections exist on the page)
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll("section[id]");
   if (sections.length > 0) {
-    const navLinkEls = document.querySelectorAll('[data-nav-link]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinkEls.forEach(l => l.removeAttribute('data-active'));
-          // Try to find exact match first (e.g., "#servicios" if home, "/#servicios" if not)
-          let active = document.querySelector(`[data-nav-link][href$="#${entry.target.id}"]`);
-          if (active) active.setAttribute('data-active', 'true');
-        }
-      });
-    }, { threshold: 0.4 });
-    sections.forEach(s => observer.observe(s));
+    const navLinkEls = document.querySelectorAll("[data-nav-link]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinkEls.forEach((l) => l.removeAttribute("data-active"));
+            // Try to find exact match first (e.g., "#servicios" if home, "/#servicios" if not)
+            let active = document.querySelector(
+              `[data-nav-link][href$="#${entry.target.id}"]`,
+            );
+            if (active) active.setAttribute("data-active", "true");
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+    sections.forEach((s) => observer.observe(s));
   } else {
     // If we're on a separate page (like contact), highlight the exact URL match
     const currentPath = window.location.pathname;
-    const active = document.querySelector(`[data-nav-link][href="${currentPath}"]`);
-    if(active) active.setAttribute('data-active', 'true');
+    const active = document.querySelector(
+      `[data-nav-link][href="${currentPath}"]`,
+    );
+    if (active) active.setAttribute("data-active", "true");
   }
 
   // Smooth scroll - Modified to only apply for hash links on the SAME page
   // If we are on /contacto and click /#servicios, it should navigate normally.
-  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const href = (a as HTMLAnchorElement).getAttribute('href')!;
+  document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = (a as HTMLAnchorElement).getAttribute("href")!;
       // Extract the hash part
-      const hashIndex = href.indexOf('#');
+      const hashIndex = href.indexOf("#");
       if (hashIndex !== -1) {
         const hash = href.substring(hashIndex);
         const target = document.querySelector(hash);
-        
+
         // Only prevent default and smooth scroll if the target element exists on CURRENT page
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
+          target.scrollIntoView({ behavior: "smooth" });
           // Optionally update URL to reflect hash
-          history.pushState(null, '', hash);
+          history.pushState(null, "", hash);
         }
       }
     });

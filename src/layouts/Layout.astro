@@ -1,7 +1,7 @@
 ---
-import '../styles/global.css';
-import '../styles/utilities.css';
-import '../styles/buttons.css';
+import "../styles/global.css";
+import "../styles/utilities.css";
+import "../styles/buttons.css";
 
 interface Props {
   title?: string;
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = 'Geoingeniería Ltda | Ingeniería que Transforma el Territorio',
-  description = 'Geoingeniería Ltda — Empresa especializada en ingeniería civil, geotecnia, proyectos viales y obras hidráulicas con más de 25 años de experiencia.',
+  title = "Geoingeniería Ltda | Ingeniería que Transforma el Territorio",
+  description = "Geoingeniería Ltda — Empresa especializada en ingeniería civil, geotecnia, proyectos viales y obras hidráulicas con más de 25 años de experiencia.",
 } = Astro.props;
 ---
 
@@ -35,13 +35,20 @@ const {
     <!-- Anti-flash: apply theme before first paint -->
     <script is:inline>
       (function () {
-        const stored = localStorage.getItem('geo-theme');
-        const preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', stored || preferred);
+        const stored = localStorage.getItem("geo-theme");
+        const preferred = window.matchMedia("(prefers-color-scheme: light)")
+          .matches
+          ? "light"
+          : "dark";
+        document.documentElement.setAttribute(
+          "data-theme",
+          stored || preferred,
+        );
       })();
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Ir al contenido principal</a>
     <slot />
   </body>
 </html>
