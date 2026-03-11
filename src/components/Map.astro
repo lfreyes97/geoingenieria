@@ -1,0 +1,87 @@
+---
+// Map component — Geoingeniería Ltda
+---
+
+<section class="map-section" aria-label="Ubicación de Geoingeniería Ltda">
+  <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+    <span
+      class="section-tag"
+      style="color: var(--clr-gold); font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;"
+      >Ubicación</span
+    >
+    <h2
+      class="section-title"
+      style="font-family: var(--ff-head); font-size: clamp(2rem, 4vw, 2.5rem); margin-top: 0.5rem;"
+    >
+      Nuestra <span class="text-accent" style="color: var(--clr-gold);"
+        >Oficina</span
+      >
+    </h2>
+  </div>
+
+  <div class="map-container" data-reveal>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.42163628461!2d-72.99974261763953!3d11.53424151756531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8b61cff4cbbfdb%3A0x6a2c222e47262f27!2sRiohacha%2C%20La%20Guajira%2C%20Colombia!5e0!3m2!1ses!2sco!4v1709420956488!5m2!1ses!2sco"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa de ubicación en Riohacha, La Guajira"
+    >
+    </iframe>
+  </div>
+</section>
+
+<style>
+  .map-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+  }
+
+  .map-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: var(--radius, 16px);
+    overflow: hidden;
+    box-shadow: var(--shadow-card, 0 4px 24px rgba(0, 0, 0, 0.4));
+    border: 1px solid var(--clr-border, rgba(0, 148, 222, 0.12));
+    background-color: var(--clr-surface, #102843);
+  }
+
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Filtro para modo oscuro. Ajusta los colores para verse similar a un mapa oscuro */
+    filter: invert(90%) hue-rotate(180deg) brightness(105%) contrast(95%);
+    transition: filter var(--transition, 0.35s ease);
+  }
+
+  /* Si el proyecto tiene tema claro, el mapa vuelve a la normalidad */
+  :global([data-theme="light"]) .map-container iframe {
+    filter: none;
+  }
+
+  @media (min-width: 768px) {
+    .map-section {
+      padding: 3rem 5%;
+    }
+    .map-container {
+      height: 450px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .map-section {
+      padding: 4rem 0;
+    }
+  }
+</style>
