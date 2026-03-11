@@ -1,0 +1,121 @@
+---
+// Navbar 4: Minimalista Full Width (Oscuro)
+// Fondo invisible (o todo oscuro), un botón estilo "hamburguesa" de lado derecho y línea indicadora.
+---
+
+<div class="wrapper-4">
+  <header class="navbar-4">
+    <a href="/" class="n4-logo">Geoingeniería</a>
+
+    <nav class="n4-links">
+      <a href="/#inicio">Inicio</a>
+      <a href="/#servicios">Servicios</a>
+      <a href="/#proyectos">Proyectos</a>
+    </nav>
+
+    <div class="n4-actions">
+      <a href="/contacto" class="n4-btn-text">Escríbenos</a>
+      <button class="menu-trigger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<style>
+  .wrapper-4 {
+    background: #040d17;
+    padding: 0;
+  }
+  .navbar-4 {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4vw;
+    font-family: var(--ff-body);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .n4-logo {
+    color: #fff;
+    font-family: var(--ff-head);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .n4-links {
+    display: flex;
+    gap: 40px;
+  }
+  .n4-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    position: relative;
+    padding: 10px 0;
+  }
+  .n4-links a:hover {
+    color: #fff;
+  }
+  .n4-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--clr-gold);
+    transform: scaleX(0);
+    transition: transform 0.3s transform-origin;
+    transform-origin: right;
+  }
+  .n4-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .n4-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .n4-btn-text {
+    color: var(--clr-gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+  .n4-btn-text:hover {
+    color: #fff;
+  }
+
+  .menu-trigger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .menu-trigger span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+  }
+  /* Hacer que la segunda línea sea más corta para verse "cool" */
+  .menu-trigger span:nth-child(2) {
+    width: 20px;
+    align-self: flex-end;
+  }
+  .menu-trigger:hover span:nth-child(2) {
+    width: 30px;
+  }
+</style>

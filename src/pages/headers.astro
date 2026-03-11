@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar1 from "../components/Navbar1.astro";
+import Navbar2 from "../components/Navbar2.astro";
+import Navbar3 from "../components/Navbar3.astro";
+import Navbar4 from "../components/Navbar4.astro";
+---
+
+<Layout title="Pruebas de Headers | Geoingeniería Ltda">
+  <!-- En esta página, los headers no tienen 'position: fixed' en su CSS para que podamos verlos uno debajo del otro, 
+       pero el que elijas lo configuraremos fijo arriba en tu Layout principal. -->
+
+  <main style="min-height: 80vh; padding-bottom: 100px;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 60px 20px 40px;">
+      <h1
+        style="font-family: var(--ff-head); font-size: 2.5rem; text-align: center; margin-bottom: 1rem;"
+      >
+        Colección de <span style="color: var(--clr-gold);"
+          >Headers (Navegación)</span
+        >
+      </h1>
+      <p
+        style="text-align: center; color: var(--clr-text-muted); font-size: 1.1rem;"
+      >
+        Revisa estas 4 propuestas. Una vez elijas tu favorita, la adaptaremos
+        para dispositivos móviles (menú hamburguesa) y la fijaremos en la parte
+        superior del sitio.
+      </p>
+    </div>
+
+    <!-- Separador Estilo 1 -->
+    <div class="desc-box">
+      <h2>Estilo 1: Corporativo Clásico (Claro)</h2>
+      <p>
+        Tradicional y confiable. Logo a la izquierda, enlaces y botón de cotizar
+        llamativo a la derecha sobre fondo blanco.
+      </p>
+    </div>
+    <Navbar1 />
+
+    <!-- Separador Estilo 2 -->
+    <div class="desc-box">
+      <h2>Estilo 2: Flotante Moderno (Dark Mode)</h2>
+      <p>
+        Estilo "Píldora". Flota como un elemento independiente sobre el fondo de
+        la página. Da un aire muy tecnológico y vanguardista.
+      </p>
+    </div>
+    <Navbar2 />
+
+    <!-- Separador Estilo 3 -->
+    <div class="desc-box">
+      <h2>Estilo 3: Doble Barra (Elegancia)</h2>
+      <p>
+        Muestra información de contacto útil rápidamente en una tira superior
+        fina, y reserva el centro de la barra principal para el logo.
+      </p>
+    </div>
+    <Navbar3 />
+
+    <!-- Separador Estilo 4 -->
+    <div class="desc-box">
+      <h2>Estilo 4: Minimalista Full Width (Oscuro)</h2>
+      <p>
+        Lineal y muy limpio. Tiene un menú "hamburguesa" asimétrico muy elegante
+        al final que denota una empresa enfocada al diseño moderno.
+      </p>
+    </div>
+    <Navbar4 />
+  </main>
+</Layout>
+
+<style>
+  .desc-box {
+    background: var(--clr-bg3, #0d2238);
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 2px dashed var(--clr-border);
+    margin-top: 60px;
+  }
+  .desc-box h2 {
+    font-family: var(--ff-head);
+    color: var(--clr-white);
+    margin-bottom: 10px;
+  }
+  .desc-box p {
+    color: var(--clr-text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>

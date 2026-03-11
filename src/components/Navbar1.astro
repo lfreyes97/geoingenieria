@@ -1,0 +1,86 @@
+---
+// Navbar 1: Corporativo Clásico
+// Fondo blanco, logo a la izquierda, enlaces a la derecha, botón CTA al final.
+---
+
+<header class="navbar-1">
+  <div class="n1-container">
+    <a href="/" class="n1-logo">
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+        <polygon
+          points="18,2 34,30 2,30"
+          stroke="var(--clr-gold)"
+          stroke-width="2.5"></polygon>
+        <polygon points="18,10 28,28 8,28" fill="var(--clr-gold)" opacity="0.3"
+        ></polygon>
+      </svg>
+      <span>Geoingeniería</span>
+    </a>
+    <nav class="n1-links">
+      <a href="/#inicio">Inicio</a>
+      <a href="/#servicios">Servicios</a>
+      <a href="/#proyectos">Proyectos</a>
+      <a href="/#nosotros">Empresa</a>
+    </nav>
+    <a href="/contacto" class="n1-btn">Cotizar Proyecto</a>
+  </div>
+</header>
+
+<style>
+  .navbar-1 {
+    background: var(--clr-surface, #ffffff);
+    color: var(--clr-text, #1c2b3a);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    font-family: var(--ff-body);
+    width: 100%;
+    /* Static for testing page */
+    position: relative;
+    z-index: 100;
+  }
+  .n1-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .n1-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--ff-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: inherit;
+  }
+  .n1-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .n1-links a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .n1-links a:hover {
+    color: var(--clr-gold);
+  }
+
+  .n1-btn {
+    background: var(--clr-gold);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  .n1-btn:hover {
+    background: var(--clr-gold-dark);
+  }
+</style>
