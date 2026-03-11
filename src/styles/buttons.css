@@ -7,7 +7,7 @@
     align-items: center;
     gap: 10px;
     background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-dark));
-    color: #fff;
+    color: var(--white, #fff); /* <-- Cambio crucial para accesibilidad */
     font-family: var(--ff-head);
     font-weight: 700;
     font-size: 0.95rem;

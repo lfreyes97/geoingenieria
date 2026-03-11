@@ -73,7 +73,10 @@
 
     --clr-text: #1c2b3a;
     --clr-text-muted: #4a5a6a;
-    --clr-white: #1c2b3a;
+    
+    /* En tema claro, lo que normalmente es "blanco puro" debe mapear a oscuros si se trata de texto (como h1, h2), o debe mantenerse blanco puro si se trata del color *dentro* de un botón o elemento con contraste alto. */
+    --clr-white: #1c2b3a; 
+    --white: #FFFFFF; /* Botones dorados siguen necesitando texto blanco independientemente del tema */
 
     --shadow: 0 20px 60px rgba(16, 88, 145, 0.10);
     --shadow-card: 0 4px 24px rgba(16, 88, 145, 0.08);
