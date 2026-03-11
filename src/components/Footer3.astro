@@ -1,0 +1,243 @@
+---
+// Footer 3: Call To Action Superior + Grid
+---
+
+<footer class="footer-3">
+  <!-- Top CTA Banner -->
+  <div class="f3-cta-banner">
+    <div class="f3-cta-inner">
+      <div class="cta-text">
+        <h2>Impulsemos su próximo proyecto juntos</h2>
+        <p>
+          Nuestro equipo de ingenieros está listo para brindarle la mejor
+          solución técnica.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a href="tel:+56223456789" class="btn-outline"
+          ><i class="fa-solid fa-phone"></i> Llamar</a
+        >
+        <a href="/contacto" class="btn-solid">Cotizar Proyecto</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <div class="f3-main">
+    <div class="f3-main-inner grid">
+      <div class="f3-col brand">
+        <h3>Geoingeniería</h3>
+        <p>NIT: 900.123.456-7</p>
+        <div class="contact-details">
+          <p>
+            <i class="fa-solid fa-location-dot"></i> Riohacha - La Guajira, Colombia
+          </p>
+          <p><i class="fa-solid fa-envelope"></i> contacto@geoingenieria.cl</p>
+        </div>
+      </div>
+
+      <div class="f3-col links">
+        <h4>Navegación</h4>
+        <a href="/#inicio">Inicio</a>
+        <a href="/#servicios">Servicios</a>
+        <a href="/#proyectos">Proyectos</a>
+      </div>
+
+      <div class="f3-col links">
+        <h4>Legal</h4>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Trabaja con nosotros</a>
+      </div>
+
+      <div class="f3-col newsletter">
+        <h4>Suscríbase</h4>
+        <form class="f3-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Correo electrónico" required />
+          <button type="submit">Enviar</button>
+        </form>
+        <div class="f3-socials">
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="f3-bottom">
+    <p>© {new Date().getFullYear()} Geoingeniería Ltda.</p>
+  </div>
+</footer>
+
+<style>
+  .footer-3 {
+    background: var(--clr-bg3, #0d2238);
+    font-family: var(--ff-body);
+  }
+
+  /* Banner Superior */
+  .f3-cta-banner {
+    background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-dark));
+    padding: 60px 0;
+  }
+  .f3-cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .cta-text h2 {
+    color: #fff;
+    font-family: var(--ff-head);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 10px;
+  }
+  .cta-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+  }
+  .cta-actions a {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .btn-solid {
+    background: #fff;
+    color: var(--clr-gold-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .btn-solid:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Main Info */
+  .f3-main {
+    padding: 80px 0;
+    background: var(--clr-bg, #081524);
+  }
+  .f3-main-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+  }
+
+  .f3-col h3,
+  .f3-col h4 {
+    color: #fff;
+    font-family: var(--ff-head);
+    margin-bottom: 24px;
+  }
+  .f3-col p,
+  .f3-col a {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .f3-col.links a:hover {
+    color: var(--clr-gold);
+    padding-left: 5px;
+    transition: 0.3s;
+  }
+
+  .contact-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact-details i {
+    color: var(--clr-gold);
+    width: 16px;
+    text-align: center;
+  }
+
+  .f3-form {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .f3-form input {
+    flex: 1;
+    padding: 12px 16px;
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 4px 0 0 4px;
+    color: #fff;
+  }
+  .f3-form button {
+    padding: 0 20px;
+    background: var(--clr-gold);
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .f3-socials {
+    display: flex;
+    gap: 16px;
+  }
+  .f3-socials a {
+    color: #fff;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+  .f3-socials a:hover {
+    opacity: 1;
+    color: var(--clr-gold);
+  }
+
+  .f3-bottom {
+    text-align: center;
+    padding: 24px;
+    background: var(--clr-bg3, #0d2238);
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  @media (max-width: 900px) {
+    .f3-main-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+    .f3-cta-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 600px) {
+    .f3-main-inner {
+      grid-template-columns: 1fr;
+    }
+    .cta-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+</style>

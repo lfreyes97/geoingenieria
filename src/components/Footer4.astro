@@ -1,0 +1,197 @@
+---
+// Footer 4: Split Screen (Pantalla Dividida)
+---
+
+<footer class="footer-4">
+  <div class="f4-left">
+    <div class="f4-brand">
+      <div class="logo-icon">
+        <svg width="48" height="48" viewBox="0 0 36 36" fill="none">
+          <polygon
+            points="18,2 34,30 2,30"
+            stroke="var(--clr-gold)"
+            stroke-width="2.5"></polygon>
+          <polygon
+            points="18,10 28,28 8,28"
+            fill="var(--clr-gold)"
+            opacity="0.3"></polygon>
+        </svg>
+      </div>
+      <h2>Geoingeniería Ltda</h2>
+      <p class="tagline">
+        Construyendo el futuro de la infraestructura paso a paso.
+      </p>
+    </div>
+
+    <div class="f4-contact-info">
+      <a href="mailto:contacto@geoingenieria.cl">contacto@geoingenieria.cl</a>
+      <a href="tel:+56223456789">+56 2 2345 6789</a>
+      <p>Riohacha, La Guajira, Colombia</p>
+    </div>
+
+    <div class="f4-socials">
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="f4-right">
+    <div class="f4-links-grid">
+      <div class="f4-links-col">
+        <h4>Empresa</h4>
+        <a href="/#nosotros">Quiénes Somos</a>
+        <a href="/#proyectos">Nuestros Proyectos</a>
+        <a href="#">Carreras</a>
+        <a href="#">Blog Corporativo</a>
+      </div>
+      <div class="f4-links-col">
+        <h4>Servicios</h4>
+        <a href="/#servicios">Estudios Geotécnicos</a>
+        <a href="/#servicios">Obras Viales</a>
+        <a href="/#servicios">Obras Hidráulicas</a>
+        <a href="/#servicios">Infraestructura</a>
+      </div>
+      <div class="f4-links-col">
+        <h4>Soporte</h4>
+        <a href="/contacto">Contacto</a>
+        <a href="#">Preguntas Frecuentes</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos de Servicio</a>
+      </div>
+    </div>
+    <div class="f4-bottom-line">
+      © {new Date().getFullYear()} Geoingeniería. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-4 {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--clr-bg, #081524);
+    font-family: var(--ff-body);
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .f4-left {
+    flex: 1 1 400px;
+    background: var(--clr-bg3, #0d2238);
+    padding: 80px clamp(30px, 5vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+  }
+
+  .f4-right {
+    flex: 2 1 600px;
+    padding: 80px clamp(30px, 5vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Left Side */
+  .f4-brand h2 {
+    color: var(--clr-white);
+    font-family: var(--ff-head);
+    font-size: 2rem;
+    margin: 20px 0 10px;
+  }
+  .f4-brand .tagline {
+    color: var(--clr-text-muted);
+    font-size: 1.1rem;
+    max-width: 300px;
+  }
+
+  .f4-contact-info {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .f4-contact-info a,
+  .f4-contact-info p {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .f4-contact-info a:hover {
+    color: var(--clr-gold);
+  }
+  .f4-contact-info p {
+    color: var(--clr-text-muted);
+    font-weight: normal;
+    font-size: 0.95rem;
+    margin-top: 5px;
+  }
+
+  .f4-socials {
+    margin-top: 60px;
+    display: flex;
+    gap: 15px;
+  }
+  .f4-socials a {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  .f4-socials a:hover {
+    background: var(--clr-gold);
+    transform: translateY(-3px);
+  }
+
+  /* Right Side */
+  .f4-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .f4-links-col h4 {
+    color: var(--clr-white);
+    font-family: var(--ff-head);
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  .f4-links-col h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--clr-gold);
+  }
+
+  .f4-links-col a {
+    display: block;
+    color: var(--clr-text-muted);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: 0.3s;
+  }
+  .f4-links-col a:hover {
+    color: var(--clr-gold);
+    transform: translateX(5px);
+  }
+
+  .f4-bottom-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    color: var(--clr-text-muted);
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer1 from "../components/Footer1.astro";
+import Footer2 from "../components/Footer2.astro";
+import Footer3 from "../components/Footer3.astro";
+import Footer4 from "../components/Footer4.astro";
+import Footer5 from "../components/Footer5.astro";
+---
+
+<Layout title="Pruebas de Footers | Geoingeniería Ltda">
+  <Navbar />
+
+  <main style="padding-top: 150px; min-height: 80vh;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+      <h1
+        style="font-family: var(--ff-head); font-size: 2.5rem; text-align: center; margin-bottom: 2rem;"
+      >
+        Colección de <span style="color: var(--clr-gold);">Footers</span>
+      </h1>
+      <p
+        style="text-align: center; color: var(--clr-text-muted); margin-bottom: 4rem; font-size: 1.1rem;"
+      >
+        Revisa las siguientes **5 propuestas** y elige la que más se adapte a la
+        empresa.
+      </p>
+    </div>
+
+    <!-- Separador Estilo 1 -->
+    <div class="separator">
+      <h2>Estilo 1: Agencia Premium (Asimétrico)</h2>
+      <p>
+        Moderno, destaca el texto y redes sociales a la izquierda, ideal para
+        marcas imponentes.
+      </p>
+    </div>
+    <Footer1 />
+
+    <!-- Separador Estilo 2 -->
+    <div class="separator">
+      <h2>Estilo 2: Minimalista Centrado</h2>
+      <p>Limpio, elegante y directo. Todo al centro, sin distracciones.</p>
+    </div>
+    <Footer2 />
+
+    <!-- Separador Estilo 3 -->
+    <div class="separator">
+      <h2>Estilo 3: Call-To-Action Superior</h2>
+      <p>
+        Orientado a la conversión. Invita fuertemente a cotizar antes de mostrar
+        los enlaces corporativos.
+      </p>
+    </div>
+    <Footer3 />
+
+    <!-- Separador Estilo 4 -->
+    <div class="separator">
+      <h2>Estilo 4: Pantalla Dividida (Split Screen)</h2>
+      <p>
+        Distribución en 2 grandes bloques. Branding fuerte a la izquierda,
+        utilidades a la derecha. Muy robusto y corporativo.
+      </p>
+    </div>
+    <Footer4 />
+
+    <!-- Separador Estilo 5 -->
+    <div class="separator">
+      <h2>Estilo 5: Diseño App Modular (Grid de Tarjetas)</h2>
+      <p>
+        Súper moderno, estructurado en "tarjetas" o bloques flotantes. Muy usado
+        en SaaS modernos y empresas tech.
+      </p>
+    </div>
+    <Footer5 />
+  </main>
+</Layout>
+
+<style>
+  .separator {
+    background: var(--clr-bg3);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 4px dashed var(--clr-border);
+    border-bottom: 1px solid var(--clr-border);
+    margin-top: 80px;
+  }
+  .separator h2 {
+    font-family: var(--ff-head);
+    color: var(--clr-gold);
+    margin-bottom: 10px;
+  }
+  .separator p {
+    color: var(--clr-text-muted);
+  }
+</style>

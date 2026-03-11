@@ -1,0 +1,215 @@
+---
+// Footer 1: Estilo "Agencia Premium" (Asimétrico)
+const serviceLinks = [
+  "Estudios Geotécnicos",
+  "Obras Viales",
+  "Obras Hidráulicas",
+  "Infraestructura Civil",
+];
+---
+
+<footer class="footer-1">
+  <div class="footer-1-inner">
+    <div class="f1-cta">
+      <h2>¿Listo para iniciar tu próximo proyecto?</h2>
+      <a href="/contacto" class="f1-btn"
+        >Hablemos ahora <i class="fa-solid fa-arrow-right"></i></a
+      >
+    </div>
+
+    <div class="f1-content">
+      <div class="f1-brand">
+        <div class="logo-text">
+          <span class="logo-main"
+            >Geo<span class="text-accent">ingeniería</span></span
+          >
+          <span class="logo-sub">Ltda</span>
+        </div>
+        <p>
+          Transformando el territorio con solidez y excelencia por más de 25
+          años.
+        </p>
+        <div class="f1-socials">
+          <a href="#" aria-label="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i></a
+          >
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-square-facebook"></i></a
+          >
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i></a
+          >
+        </div>
+      </div>
+
+      <div class="f1-links">
+        <h4>Servicios</h4>
+        <ul>
+          {
+            serviceLinks.map((s) => (
+              <li>
+                <a href="#">{s}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="f1-links">
+        <h4>Compañía</h4>
+        <ul>
+          <li><a href="/#nosotros">Quiénes somos</a></li>
+          <li><a href="/#proyectos">Proyectos</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="f1-bottom">
+      <p>
+        © {new Date().getFullYear()} Geoingeniería Ltda. Todos los derechos reservados.
+      </p>
+      <div class="f1-legal">
+        <a href="#">Privacidad</a> · <a href="#">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-1 {
+    background: var(--clr-bg, #081524);
+    color: var(--clr-text-muted);
+    border-top: 1px solid var(--clr-border);
+    padding: 80px 0 30px;
+    font-family: var(--ff-body);
+  }
+  .footer-1-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+  }
+  .f1-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 60px;
+  }
+  .f1-cta h2 {
+    font-family: var(--ff-head);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--clr-white);
+    max-width: 600px;
+    line-height: 1.2;
+  }
+  .f1-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--clr-gold);
+    color: #fff;
+    padding: 18px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+  }
+  .f1-btn:hover {
+    background: var(--clr-white);
+    color: var(--clr-bg);
+    transform: translateY(-3px);
+  }
+  .f1-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .f1-brand .logo-text {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .f1-brand p {
+    max-width: 300px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .f1-socials {
+    display: flex;
+    gap: 16px;
+  }
+  .f1-socials a {
+    color: var(--clr-white);
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+  .f1-socials a:hover {
+    opacity: 1;
+    color: var(--clr-gold);
+  }
+
+  .f1-links h4 {
+    color: #fff;
+    font-family: var(--ff-head);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+  }
+  .f1-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .f1-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .f1-links a:hover {
+    color: var(--clr-gold);
+  }
+
+  .f1-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    font-size: 0.9rem;
+  }
+  .f1-legal a {
+    color: inherit;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  .f1-legal a:hover {
+    color: var(--clr-white);
+  }
+
+  .text-accent {
+    color: var(--clr-gold);
+  }
+
+  @media (max-width: 900px) {
+    .f1-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .f1-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .f1-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+  }
+</style>
