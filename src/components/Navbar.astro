@@ -1,6 +1,7 @@
 ---
 // Navbar component — Geoingeniería Ltda
 import ThemeToggle from "./ThemeToggle.astro";
+import Logo from "./Logo.astro";
 
 // Usamos el path actual para saber si estamos en el index o no
 const currentPath = Astro.url.pathname;
@@ -10,57 +11,33 @@ const isHome = currentPath === "/" || currentPath === "/index.html";
 <nav class="navbar" id="navbar">
   <div class="container">
     <a href={isHome ? "#inicio" : "/#inicio"} class="logo">
-      <div class="logoIcon">
-        <svg
-          width="36"
-          height="36"
-          viewBox="0 0 36 36"
-          fill="none"
-          aria-hidden="true"
-        >
-          <polygon
-            points="18,2 34,30 2,30"
-            stroke="#E8A838"
-            stroke-width="2.5"
-            fill="none"></polygon>
-          <polygon points="18,10 28,28 8,28" fill="#E8A838" opacity="0.25"
-          ></polygon>
-          <line
-            x1="18"
-            y1="2"
-            x2="18"
-            y2="30"
-            stroke="#E8A838"
-            stroke-width="1.5"
-            opacity="0.7"></line>
-        </svg>
-      </div>
-      <div class="logoText">
-        <span class="logoMain">Geoingeniería</span>
-        <span class="logoSub">Ltda</span>
-      </div>
+      <Logo height="48px" class="logo-image" />
     </a>
 
     <ul class="links" id="nav-links">
       <li>
         <a href={isHome ? "#inicio" : "/#inicio"} class="link" data-nav-link
-          >Inicio</a>
+          >Inicio</a
+        >
       </li>
       <li>
         <a
           href={isHome ? "#servicios" : "/#servicios"}
           class="link"
-          data-nav-link>Servicios</a>
+          data-nav-link>Servicios</a
+        >
       </li>
       <li>
         <a
           href={isHome ? "#proyectos" : "/#proyectos"}
           class="link"
-          data-nav-link>Proyectos</a>
+          data-nav-link>Proyectos</a
+        >
       </li>
       <li>
         <a href={isHome ? "#nosotros" : "/#nosotros"} class="link" data-nav-link
-          >Nosotros</a>
+          >Nosotros</a
+        >
       </li>
       <li><a href="/contacto" class="link" data-nav-link>Contacto</a></li>
     </ul>
