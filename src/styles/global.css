@@ -48,6 +48,9 @@
     --clr-text-muted: #8a8a8a;
     --clr-white: var(--white);
 
+    --clr-nav-bg: rgba(8, 21, 36, 0.8);
+    --clr-overlay: rgba(8, 21, 36, 0.85);
+
     --ff-head: 'Outfit', sans-serif;
     --ff-body: 'Inter', sans-serif;
     --radius: 16px;
@@ -60,31 +63,34 @@
 
 /* ── Light Theme ── */
 [data-theme="light"] {
-    --clr-bg: #f4f7fb;
-    --clr-bg2: #edf1f7;
-    --clr-bg3: #e4eaf3;
+    --clr-bg: #f8fafc;
+    --clr-bg2: #f1f5f9;
+    --clr-bg3: #e2e8f0;
     --clr-surface: #ffffff;
-    --clr-surface2: #f0f4fa;
-    --clr-border: rgba(43, 123, 195, 0.15);
+    --clr-surface2: #f8fafc;
+    --clr-border: rgba(43, 123, 195, 0.1);
 
-    --clr-gold: var(--safety-orange);
-    --clr-gold-light: var(--carrot-orange);
-    --clr-gold-dark: #cc6510;
+    --clr-gold: #E87817;
+    --clr-gold-light: #f08e1e;
+    --clr-gold-dark: #bf5e0f;
 
-    --clr-text: #1c2b3a;
-    --clr-text-muted: #4a5a6a;
-    
-    /* En tema claro, lo que normalmente es "blanco puro" debe mapear a oscuros si se trata de texto (como h1, h2), o debe mantenerse blanco puro si se trata del color *dentro* de un botón o elemento con contraste alto. */
-    --clr-white: #1c2b3a; 
-    --white: #FFFFFF; /* Botones dorados siguen necesitando texto blanco independientemente del tema */
+    --clr-text: #0f172a;
+    --clr-text-muted: #475569;
 
-    --shadow: 0 20px 60px rgba(16, 88, 145, 0.10);
-    --shadow-card: 0 4px 24px rgba(16, 88, 145, 0.08);
+    --clr-white: #0f172a;
+    --white: #FFFFFF;
+
+    --clr-nav-bg: rgba(255, 255, 255, 0.85);
+    --clr-overlay: rgba(248, 250, 252, 0.9);
+
+    --shadow: 0 20px 60px rgba(15, 23, 42, 0.05);
+    --shadow-card: 0 4px 24px rgba(15, 23, 42, 0.04);
 }
 
 /* ── color-scheme hints ── */
 html {
     color-scheme: dark;
+    background-color: var(--clr-bg);
 }
 
 [data-theme="light"] {
@@ -92,13 +98,18 @@ html {
 }
 
 /* ── Smooth theme transitions ── */
-html,
-html * {
-    transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.2s ease,
-        box-shadow 0.3s ease;
+/* Avoid html * to prevent layout thrashing and flashes on page load */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.navbar,
+.hero .overlay,
+.hero .stats,
+.footer,
+.card,
+section {
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
 
 /* ════════════════════════════════
