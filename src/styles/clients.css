@@ -10,13 +10,13 @@
 .clients .inner {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: var(--space-8);
     padding: 0 40px;
 }
 
 .clients .label {
     color: var(--clr-text-muted);
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     flex-shrink: 0;
@@ -44,7 +44,7 @@
     align-items: center;
     font-family: var(--ff-head);
     font-weight: 800;
-    font-size: 1rem;
+    font-size: var(--fs-base);
     color: var(--clr-text-muted);
     padding: 0 40px;
     transition: color 0.3s;
@@ -58,10 +58,10 @@
 @media (max-width: 768px) {
     .clients .inner {
         flex-direction: column;
-        gap: 16px;
+        gap: var(--space-4);
         padding: 0 20px;
     }
     .clients .label {
-        font-size: 0.85rem;
+        font-size: var(--fs-sm);
     }
 }

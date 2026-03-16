@@ -10,9 +10,9 @@
     color: var(--white, #fff); /* <-- Cambio crucial para accesibilidad */
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: var(--fs-sm);
     padding: 14px 28px;
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     transition: var(--transition);
     box-shadow: 0 4px 20px rgba(240, 142, 30, 0.35);
 }
@@ -31,9 +31,9 @@
     color: var(--clr-gold);
     font-family: var(--ff-head);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: var(--fs-sm);
     padding: 13px 28px;
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     transition: var(--transition);
 }
 

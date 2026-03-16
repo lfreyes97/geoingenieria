@@ -28,14 +28,14 @@
     display: flex;
     align-items: center;
     height: 100%;
-    gap: 40px;
+    gap: var(--space-10);
 }
 
 /* Logo */
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: var(--space-3);
     flex-shrink: 0;
 }
 
@@ -51,9 +51,9 @@
 .navbar .logoMain {
     font-family: var(--ff-head);
     font-weight: 800;
-    font-size: 1.15rem;
+    font-size: var(--fs-md);
     color: var(--clr-white);
-    line-height: 1;
+    line-height: var(--lh-tight);
 }
 
 .navbar .logoSub {
@@ -69,23 +69,23 @@
 .navbar .links {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: var(--space-1);
     /* Tighter gap, use padding on links */
     margin-left: auto;
 }
 
 .navbar .link {
     font-family: var(--ff-head);
-    font-size: 0.95rem;
+    font-size: var(--fs-sm);
     font-weight: 600;
     /* Slightly bolder for premium feel */
     color: var(--clr-text);
-    padding: 8px 16px;
-    border-radius: 50px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-pill);
     /* Pill shape hover background */
     transition: all 0.3s ease;
     position: relative;
-    letter-spacing: 0.02em;
+    letter-spacing: var(--tracking-wide);
 }
 
 .navbar .link:hover,
@@ -101,13 +101,12 @@
 /* CTA */
 .navbar .cta {
     background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-dark));
-    color: #fff !important;
-    /* Always white on orange bg */
+    color: #fff;
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.9rem;
-    padding: 12px 28px;
-    border-radius: 50px;
+    font-size: var(--fs-sm);
+    padding: var(--space-3) var(--space-7);
+    border-radius: var(--radius-pill);
     flex-shrink: 0;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 15px rgba(232, 120, 23, 0.3);
@@ -125,7 +124,7 @@
     display: none;
     flex-direction: column;
     gap: 5px;
-    padding: 8px;
+    padding: var(--space-2);
     margin-left: auto;
 }
 
@@ -157,7 +156,7 @@
     justify-content: center;
     width: 42px;
     height: 42px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     /* Squircle for a more modern look */
     border: 1px solid var(--clr-border);
     background: rgba(255, 255, 255, 0.05);
@@ -212,8 +211,8 @@
         right: 0;
         background: var(--clr-bg2);
         backdrop-filter: blur(20px);
-        padding: 24px;
-        gap: 4px;
+        padding: var(--space-6);
+        gap: var(--space-1);
     }
 
     .navbar .links[data-open="true"] {
@@ -222,7 +221,7 @@
 
     .navbar .link {
         padding: 14px;
-        font-size: 1rem;
+        font-size: var(--fs-base);
     }
 
     .navbar .cta {

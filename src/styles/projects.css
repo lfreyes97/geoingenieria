@@ -1,14 +1,14 @@
 /* ── Projects Section ── */
 .projects {
-    padding: 100px clamp(20px, 7vw, 100px);
+    padding: var(--section-py) var(--section-px);
     background: var(--clr-bg);
 }
 
 .projects .grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-    grid-template-rows: 420px;
-    gap: 20px;
+    grid-template-rows: minmax(320px, 420px);
+    gap: var(--space-5);
     max-width: 1280px;
     margin: 0 auto 48px;
 }
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 32px;
+    padding: var(--space-8);
     transition: var(--transition);
 }
 
@@ -54,28 +54,28 @@
     color: #fff;
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
     padding: 5px 12px;
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     margin-bottom: 12px;
     width: fit-content;
 }
 
 .projects .card h3 {
     font-family: var(--ff-head);
-    font-size: 1.15rem;
+    font-size: var(--fs-md);
     font-weight: 700;
     color: #fff;
     margin-bottom: 8px;
-    line-height: 1.3;
+    line-height: var(--lh-snug);
 }
 
 .projects .card p {
     color: rgba(255, 255, 255, 0.75);
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-base);
     margin-bottom: 20px;
     opacity: 0;
     transform: translateY(12px);
@@ -90,14 +90,14 @@
 .projects .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
     background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-dark));
     color: #fff;
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: var(--fs-xs);
     padding: 9px 18px;
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     width: fit-content;
     opacity: 0;
     transform: translateY(12px);

@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    padding: calc(var(--nav-h) + 20px) clamp(20px, 7vw, 100px) 0;
+    padding: calc(var(--nav-h) + var(--space-5)) var(--section-px) 0;
 }
 
 .hero .bg {
@@ -26,10 +26,10 @@
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to right, var(--clr-bg) 40%, rgba(8, 21, 36, 0.1) 100%),
-        linear-gradient(to top, var(--clr-bg) 0%, transparent 50%);
+        linear-gradient(to right, var(--clr-bg) 20%, rgba(8, 21, 36, 0.1) 100%),
+        linear-gradient(to top, var(--clr-bg) 0%, transparent 10%);
     background-color: var(--clr-overlay);
-    opacity: 0.85;
+    opacity: 0.70;
     transition: all 0.4s ease;
 }
 
@@ -45,15 +45,15 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(240, 142, 30, 0.1);
-    border: 1px solid rgba(240, 142, 30, 0.3);
+    background: rgba(var(--clr-gold-rgb), 0.1);
+    border: 1px solid rgba(var(--clr-gold-rgb), 0.3);
     color: var(--clr-gold);
-    font-size: 0.8rem;
+    font-size: var(--fs-xs);
     font-weight: 600;
     padding: 8px 18px;
     border-radius: 50px;
     margin-bottom: 28px;
-    letter-spacing: 0.05em;
+    letter-spacing: var(--tracking-wider);
 }
 
 .hero .badgeDot {
@@ -80,11 +80,10 @@
 
 .hero .title {
     font-family: var(--ff-head);
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--clr-white);
-    /* Use theme white which flips or clr-text */
+    font-size: var(--fs-4xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    color: var(--hero-title-color);
     margin-bottom: 24px;
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     transition: color 0.3s ease;
@@ -92,7 +91,6 @@
 
 [data-theme="light"] .hero .title {
     text-shadow: none;
-    color: var(--clr-text);
 }
 
 .hero .accent {
@@ -100,26 +98,24 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
 }
 
 .hero .desc {
-    color: var(--clr-text);
+    color: var(--hero-desc-color);
     opacity: 0.9;
-    font-size: 1.08rem;
-    line-height: 1.75;
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
     margin-bottom: 36px;
     max-width: 560px;
     transition: color 0.3s ease;
 }
 
-[data-theme="light"] .hero .desc {
-    color: var(--clr-text-muted);
-}
-
 .hero .actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: var(--space-4);
 }
 
 /* Stats bar */
@@ -134,7 +130,7 @@
     border: 1px solid var(--clr-border);
     border-bottom: none;
     border-radius: var(--radius) var(--radius) 0 0;
-    padding: 28px 48px;
+    padding: var(--space-7) var(--space-12);
     max-width: 900px;
     margin-top: 60px;
     transition: background 0.3s ease, border-color 0.3s ease;
@@ -156,14 +152,14 @@
 
 .hero .statNumber {
     font-family: var(--ff-head);
-    font-size: 2.4rem;
+    font-size: var(--fs-3xl);
     font-weight: 900;
     color: var(--clr-gold);
     line-height: 1;
 }
 
 .hero .statLabel {
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
     color: var(--clr-text-muted);
     text-align: center;
     max-width: 90px;
@@ -174,7 +170,7 @@
     height: 48px;
     background: var(--clr-border);
     flex-shrink: 0;
-    margin: 0 4px;
+    margin: 0 var(--space-1);
 }
 
 /* Scroll hint */
@@ -188,8 +184,8 @@
     align-items: center;
     gap: 10px;
     color: var(--clr-text-muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    font-size: var(--fs-xs);
+    letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
 }
 
@@ -221,7 +217,7 @@
 @media (max-width: 768px) {
     .hero .stats {
         flex-direction: column;
-        gap: 20px;
+        gap: var(--space-5);
     }
 
     .hero .statDivider {
@@ -231,10 +227,6 @@
 }
 
 @media (max-width: 480px) {
-    .hero .title {
-        font-size: 2.5rem;
-    }
-
     .hero .actions {
         flex-direction: column;
     }

@@ -37,9 +37,13 @@
     --clr-surface2: #133255;
     --clr-border: rgba(0, 148, 222, 0.12);
 
+    --clr-gold-rgb: 240, 142, 30;
     --clr-gold: var(--carrot-orange);
     --clr-gold-light: #F9B05A;
     --clr-gold-dark: var(--safety-orange);
+
+    --hero-title-color: var(--clr-white);
+    --hero-desc-color: var(--clr-text);
 
     --clr-accent2: var(--celestial-blue);
     --clr-accent2-mid: var(--steel-blue);
@@ -51,10 +55,25 @@
     --clr-nav-bg: rgba(8, 21, 36, 0.8);
     --clr-overlay: rgba(8, 21, 36, 0.85);
 
-    --ff-head: 'Outfit', sans-serif;
-    --ff-body: 'Inter', sans-serif;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-15: 60px;
+    --space-20: 80px;
+    --section-py: 100px;
+    --section-px: clamp(20px, 7vw, 100px);
+
+    --radius-md: 12px;
     --radius: 16px;
     --radius-sm: 8px;
+    --radius-pill: 50px;
     --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
     --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,9 +89,16 @@
     --clr-surface2: #f8fafc;
     --clr-border: rgba(43, 123, 195, 0.1);
 
+    --clr-gold-rgb: 232, 120, 23;
     --clr-gold: #E87817;
     --clr-gold-light: #f08e1e;
     --clr-gold-dark: #bf5e0f;
+
+    --clr-accent2: #0094DE;
+    --clr-accent2-mid: #2B7BC3;
+
+    --hero-title-color: var(--clr-text);
+    --hero-desc-color: var(--clr-text-muted);
 
     --clr-text: #0f172a;
     --clr-text-muted: #475569;
@@ -186,8 +212,8 @@ select {
     color: #fff;
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.9rem;
-    padding: 12px 24px;
+    font-size: var(--fs-sm);
+    padding: var(--space-3) var(--space-6);
     border-radius: var(--radius-sm);
     transition: top 0.2s ease;
     text-decoration: none;

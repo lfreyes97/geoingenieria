@@ -8,7 +8,7 @@
     display: inline-block;
     color: var(--clr-gold);
     font-family: var(--ff-head);
-    font-size: 0.78rem;
+    font-size: var(--fs-xs);
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -17,7 +17,7 @@
 
 .section-title {
     font-family: var(--ff-head);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: var(--fs-3xl);
     font-weight: 800;
     line-height: 1.15;
     color: var(--clr-white);
@@ -26,7 +26,7 @@
 
 .section-desc {
     color: var(--clr-text-muted);
-    font-size: 1.05rem;
+    font-size: var(--fs-base);
     max-width: 640px;
 }
 
