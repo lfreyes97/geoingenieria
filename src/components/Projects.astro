@@ -1,9 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import damProjectImg from '../assets/images/dam_project.png';
+import geoSurveyImg from '../assets/images/geo_survey.png';
+import tunnelProjectImg from '../assets/images/tunnel_project.png';
+
 // Projects component — Geoingeniería Ltda
 const projects = [
   {
     id: 'proj-1',
-    image: '/images/dam_project.png',
+    image: damProjectImg,
     alt: 'Proyecto Presa El Toro',
     tag: 'Obras Hidráulicas',
     title: 'Presa El Toro — Región del Biobío',
@@ -12,7 +17,7 @@ const projects = [
   },
   {
     id: 'proj-2',
-    image: '/images/geo_survey.png',
+    image: geoSurveyImg,
     alt: 'Estudio geotécnico Atacama',
     tag: 'Geotecnia',
     title: 'Estudio Geotécnico Atacama',
@@ -21,7 +26,7 @@ const projects = [
   },
   {
     id: 'proj-3',
-    image: '/images/tunnel_project.png',
+    image: tunnelProjectImg,
     alt: 'Túnel Ruta 68',
     tag: 'Infraestructura Civil',
     title: 'Túnel Ruta 68 — Valparaíso',
@@ -44,7 +49,7 @@ const projects = [
   <div class="grid">
     {projects.map(proj => (
       <div class={`card${proj.large ? ' large' : ''}`} id={proj.id} data-reveal>
-        <img src={proj.image} alt={proj.alt} loading="lazy" />
+        <Image src={proj.image} alt={proj.alt} loading={proj.id === 'proj-1' ? "eager" : "lazy"} />
         <div class="overlay">
           <div class="tag">{proj.tag}</div>
           <h3>{proj.title}</h3>

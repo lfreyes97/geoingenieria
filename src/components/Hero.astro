@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/Hero2.webp';
+
 // Hero component — Geoingeniería Ltda
 ---
 
 <section class="hero" id="main-content" aria-label="Inicio">
   <div class="bg">
-    <img src="/images/Hero2.webp" alt="Obras de ingeniería civil" class="img" />
+    <Image src={heroImage} alt="Obras de ingeniería civil" class="img" />
     <div class="overlay"></div>
   </div>
 

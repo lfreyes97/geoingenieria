@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import geoSurveyImg from '../assets/images/geo_survey.png';
+
 // About component — Geoingeniería Ltda
 const values = [
   { icon: "fa-shield-halved", title: "Seguridad" },
@@ -50,7 +53,7 @@ const certifications = [
 
     <div class="visual">
       <div class="imgWrap" data-reveal>
-        <img src="/images/geo_survey.png" alt="Equipo Geoingeniería Ltda" />
+        <Image src={geoSurveyImg} alt="Equipo Geoingeniería Ltda" />
         <div class="badge">
           <span class="badgeNum">ISO</span>
           <span class="badgeText">9001:2015<br />Certificados</span>
