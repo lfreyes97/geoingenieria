@@ -26,8 +26,8 @@
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to right, var(--clr-bg) 20%, rgba(8, 21, 36, 0.1) 100%),
-        linear-gradient(to top, var(--clr-bg) 0%, transparent 10%);
+        linear-gradient(to right, var(--brand-primary-deep) 20%, rgba(8, 21, 36, 0.1) 100%),
+        linear-gradient(to top, var(--brand-primary-deep) 0%, transparent 10%);
     background-color: var(--clr-overlay);
     opacity: 0.70;
     transition: all 0.4s ease;
@@ -59,7 +59,7 @@
 .hero .badgeDot {
     width: 8px;
     height: 8px;
-    background: var(--clr-gold);
+    background: var(--clr-gold-dark);
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -85,16 +85,12 @@
     line-height: var(--lh-tight);
     color: var(--hero-title-color);
     margin-bottom: 24px;
-    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--hero-title-shadow);
     transition: color 0.3s ease;
 }
 
-[data-theme="light"] .hero .title {
-    text-shadow: none;
-}
-
 .hero .accent {
-    background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-light));
+    background: var(--clr-gold-dark);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -125,7 +121,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background: var(--clr-bg2);
+    background: var(--hero-stats-bg);
     backdrop-filter: blur(16px);
     border: 1px solid var(--clr-border);
     border-bottom: none;
@@ -133,12 +129,8 @@
     padding: var(--space-7) var(--space-12);
     max-width: 900px;
     margin-top: 60px;
+    box-shadow: var(--hero-stats-shadow);
     transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-[data-theme="light"] .hero .stats {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hero .statItem {
