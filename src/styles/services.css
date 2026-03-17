@@ -1,13 +1,13 @@
 /* ── Services Section ── */
 .services {
-    padding: 100px clamp(20px, 7vw, 100px);
+    padding: var(--section-py) var(--section-px);
     background: var(--clr-bg2);
 }
 
 .services .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: var(--space-6);
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -78,7 +78,7 @@
 /* Text */
 .services .card h3 {
     font-family: var(--ff-head);
-    font-size: 1.18rem;
+    font-size: var(--fs-md);
     font-weight: 700;
     color: var(--clr-white);
     margin-bottom: 12px;
@@ -86,7 +86,7 @@
 
 .services .card>p {
     color: var(--clr-text-muted);
-    font-size: 0.93rem;
+    font-size: var(--fs-sm);
     margin-bottom: 20px;
 }
 
@@ -94,7 +94,7 @@
 .services .list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-2);
     margin-bottom: 24px;
 }
 
@@ -102,7 +102,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.88rem;
+    font-size: var(--fs-sm);
     color: var(--clr-text);
 }
 
@@ -110,11 +110,11 @@
 .services .link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
     color: var(--clr-gold);
     font-family: var(--ff-head);
     font-weight: 600;
-    font-size: 0.88rem;
+    font-size: var(--fs-sm);
     transition: var(--transition);
 }
 

@@ -1,18 +1,13 @@
 ---
 // Navbar 2: Flotante Moderno (Pill)
 // Ideal para fondos oscuros. Como una "píldora" centrada flotando.
+import Logo from "./Logo.astro";
 ---
 
 <div class="wrapper-2">
   <header class="navbar-2">
     <a href="/" class="n2-logo">
-      <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
-        <polygon
-          points="18,2 34,30 2,30"
-          stroke="var(--clr-gold)"
-          stroke-width="2.5"></polygon>
-      </svg>
-      GEO
+      <Logo height="28px" />
     </a>
     <nav class="n2-links">
       <a href="/#inicio">Inicio</a>
@@ -80,7 +75,7 @@
     width: 40px;
     height: 40px;
     background: var(--clr-gold);
-    color: var(--white, #fff);
+    color: var(--clr-on-accent);
     display: flex;
     align-items: center;
     justify-content: center;

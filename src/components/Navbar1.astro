@@ -1,20 +1,13 @@
 ---
 // Navbar 1: Corporativo Clásico
 // Fondo blanco, logo a la izquierda, enlaces a la derecha, botón CTA al final.
+import Logo from "./Logo.astro";
 ---
 
 <header class="navbar-1">
   <div class="n1-container">
     <a href="/" class="n1-logo">
-      <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-        <polygon
-          points="18,2 34,30 2,30"
-          stroke="var(--clr-gold)"
-          stroke-width="2.5"></polygon>
-        <polygon points="18,10 28,28 8,28" fill="var(--clr-gold)" opacity="0.3"
-        ></polygon>
-      </svg>
-      <span>Geoingeniería</span>
+      <Logo height="36px" />
     </a>
     <nav class="n1-links">
       <a href="/#inicio">Inicio</a>

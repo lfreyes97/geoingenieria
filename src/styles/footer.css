@@ -1,6 +1,6 @@
 /* ── Footer Minimalist Centered ── */
 .footer-minimal {
-    background: var(--clr-bg2, #0b1d30);
+    background: var(--clr-bg2);
     border-top: 1px solid var(--clr-border);
     padding: 80px 0 40px;
     text-align: center;
@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: var(--space-10);
 }
 
 /* ── Logo ── */
@@ -25,7 +25,7 @@
 }
 
 .centered-logo .logo-main {
-    font-size: 1.5rem;
+    font-size: var(--fs-xl);
 }
 
 /* ── Navigation Links ── */
@@ -42,7 +42,7 @@
     color: var(--clr-white);
     font-family: var(--ff-head);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: var(--fs-base);
     transition: color 0.3s ease;
     position: relative;
 }
@@ -71,7 +71,7 @@
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .social-icon {
@@ -83,7 +83,7 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05); /* Slight transparent background */
     color: var(--clr-white);
-    font-size: 1.2rem;
+    font-size: var(--fs-md);
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
@@ -104,8 +104,8 @@
 }
 
 .footer-bottom p {
-    font-size: 0.85rem;
-    line-height: 1.8;
+    font-size: var(--fs-xs);
+    line-height: var(--lh-relaxed);
     color: var(--clr-text-muted);
     opacity: 0.8;
 }

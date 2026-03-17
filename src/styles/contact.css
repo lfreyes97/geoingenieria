@@ -1,13 +1,13 @@
 /* ── Contact Section ── */
 .contact {
-    padding: 100px clamp(20px, 7vw, 100px);
+    padding: var(--section-py) var(--section-px);
     background: var(--clr-bg);
 }
 
 .contact .grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
-    gap: 60px;
+    gap: var(--space-15);
     max-width: 1280px;
     margin: 0 auto;
     align-items: start;
@@ -24,20 +24,20 @@
 .contact .formRow {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .contact .formGroup {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-2);
     margin-bottom: 20px;
 }
 
 .contact .formGroup label {
     font-family: var(--ff-head);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: var(--fs-xs);
     color: var(--clr-text);
 }
 
@@ -48,7 +48,7 @@
     border: 1px solid var(--clr-border);
     border-radius: var(--radius-sm);
     padding: 13px 16px;
-    font-size: 0.93rem;
+    font-size: var(--fs-sm);
     color: var(--clr-text);
     transition: var(--transition);
     width: 100%;
@@ -77,13 +77,6 @@
     color: var(--clr-text-muted);
 }
 
-.contact .formGroup input:focus,
-.contact .formGroup select:focus,
-.contact .formGroup textarea:focus {
-    border-color: var(--clr-gold);
-    box-shadow: 0 0 0 3px rgba(240, 142, 30, 0.12);
-}
-
 .contact .formGroup textarea {
     resize: vertical;
     min-height: 130px;
@@ -93,8 +86,8 @@
     width: 100%;
     justify-content: center;
     border-radius: var(--radius-sm);
-    padding: 16px;
-    font-size: 1rem;
+    padding: var(--space-4);
+    font-size: var(--fs-base);
     margin-top: 4px;
 }
 
@@ -106,7 +99,7 @@
 .contact .success {
     display: none;
     align-items: center;
-    gap: 12px;
+    gap: var(--space-3);
     margin-top: 20px;
     background: rgba(72, 199, 116, 0.1);
     border: 1px solid rgba(72, 199, 116, 0.3);
@@ -118,14 +111,14 @@
 }
 
 .contact .success i {
-    font-size: 1.4rem;
+    font-size: var(--fs-lg);
 }
 
 /* Info sidebar */
 .contact .info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-5);
 }
 
 .contact .infoCard {
@@ -148,27 +141,27 @@
     height: 44px;
     background: rgba(240, 142, 30, 0.1);
     border: 1px solid rgba(240, 142, 30, 0.2);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--clr-gold);
-    font-size: 1rem;
+    font-size: var(--fs-base);
     flex-shrink: 0;
 }
 
 .contact .infoCard h4 {
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: var(--fs-sm);
     color: var(--clr-white);
     margin-bottom: 6px;
 }
 
 .contact .infoCard p {
     color: var(--clr-text-muted);
-    font-size: 0.88rem;
-    line-height: 1.6;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-base);
 }
 
 /* Social */
@@ -183,12 +176,12 @@
     height: 44px;
     background: var(--clr-surface);
     border: 1px solid var(--clr-border);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--clr-text-muted);
-    font-size: 1rem;
+    font-size: var(--fs-base);
     transition: var(--transition);
 }
 

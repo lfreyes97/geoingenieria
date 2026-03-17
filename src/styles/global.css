@@ -18,14 +18,38 @@
 
 /* ── Brand Palette ── */
 :root {
-    --steel-blue: #2B7BC3;
-    --platinum: #DEDEDE;
-    --carrot-orange: #F08E1E;
-    --white: #FFFFFF;
-    --lapis-lazuli: #105891;
-    --letter-gray: #727272;
-    --safety-orange: #E87817;
-    --celestial-blue: #0094DE;
+    --brand-primary: #2B7BC3;
+    --brand-primary-bright: #0094DE;
+    --brand-primary-deep: #105891;
+    --brand-accent: #F08E1E;
+    --brand-accent-strong: #E87817;
+
+    --neutral-0: #FFFFFF;
+    --neutral-200: #DEDEDE;
+    --neutral-500: #727272;
+
+    /* Theme-independent tokens */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-15: 60px;
+    --space-20: 80px;
+    --section-py: 100px;
+    --section-px: clamp(20px, 7vw, 100px);
+
+    --radius-md: 12px;
+    --radius: 16px;
+    --radius-sm: 8px;
+    --radius-pill: 50px;
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --nav-h: 80px;
 }
 
 /* ── Dark Theme (default) ── */
@@ -37,54 +61,73 @@
     --clr-surface2: #133255;
     --clr-border: rgba(0, 148, 222, 0.12);
 
-    --clr-gold: var(--carrot-orange);
+    --clr-gold-rgb: 240, 142, 30;
+    --clr-gold: var(--brand-accent);
     --clr-gold-light: #F9B05A;
-    --clr-gold-dark: var(--safety-orange);
+    --clr-gold-dark: var(--brand-accent-strong);
+    --clr-on-accent: #FFFFFF;
 
-    --clr-accent2: var(--celestial-blue);
-    --clr-accent2-mid: var(--steel-blue);
+    --hero-title-color: var(--clr-white);
+    --hero-desc-color: var(--clr-text);
 
-    --clr-text: var(--platinum);
+    --clr-accent2: var(--brand-primary-bright);
+    --clr-accent2-mid: var(--brand-primary);
+
+    --clr-text: var(--neutral-200);
     --clr-text-muted: #8a8a8a;
-    --clr-white: var(--white);
+    --clr-white: var(--neutral-0);
 
-    --ff-head: 'Outfit', sans-serif;
-    --ff-body: 'Inter', sans-serif;
-    --radius: 16px;
-    --radius-sm: 8px;
+    --clr-nav-bg: rgba(8, 21, 36, 0.8);
+    --clr-overlay: rgba(8, 21, 36, 0.85);
+
+    --hero-title-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    --hero-stats-bg: var(--clr-bg2);
+    --hero-stats-shadow: none;
+
     --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --nav-h: 80px;
 }
 
 /* ── Light Theme ── */
 [data-theme="light"] {
-    --clr-bg: #f4f7fb;
-    --clr-bg2: #edf1f7;
-    --clr-bg3: #e4eaf3;
+    --clr-bg: #f8fafc;
+    --clr-bg2: #f1f5f9;
+    --clr-bg3: #e2e8f0;
     --clr-surface: #ffffff;
-    --clr-surface2: #f0f4fa;
-    --clr-border: rgba(43, 123, 195, 0.15);
+    --clr-surface2: #f8fafc;
+    --clr-border: rgba(43, 123, 195, 0.1);
 
-    --clr-gold: var(--safety-orange);
-    --clr-gold-light: var(--carrot-orange);
-    --clr-gold-dark: #cc6510;
+    --clr-gold-rgb: 232, 120, 23;
+    --clr-gold: #E87817;
+    --clr-gold-light: #f08e1e;
+    --clr-gold-dark: #bf5e0f;
+    --clr-on-accent: #FFFFFF;
 
-    --clr-text: #1c2b3a;
-    --clr-text-muted: #4a5a6a;
-    
-    /* En tema claro, lo que normalmente es "blanco puro" debe mapear a oscuros si se trata de texto (como h1, h2), o debe mantenerse blanco puro si se trata del color *dentro* de un botón o elemento con contraste alto. */
-    --clr-white: #1c2b3a; 
-    --white: #FFFFFF; /* Botones dorados siguen necesitando texto blanco independientemente del tema */
+    --clr-accent2: #0094DE;
+    --clr-accent2-mid: #2B7BC3;
 
-    --shadow: 0 20px 60px rgba(16, 88, 145, 0.10);
-    --shadow-card: 0 4px 24px rgba(16, 88, 145, 0.08);
+    --hero-title-color: var(--clr-text);
+    --hero-desc-color: var(--clr-text-muted);
+
+    --clr-text: #0f172a;
+    --clr-text-muted: #475569;
+
+    --clr-white: #0f172a;
+    --clr-nav-bg: rgba(255, 255, 255, 0.85);
+    --clr-overlay: rgba(248, 250, 252, 0.9);
+
+    --hero-title-shadow: none;
+    --hero-stats-bg: rgba(255, 255, 255, 0.9);
+    --hero-stats-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+
+    --shadow: 0 20px 60px rgba(15, 23, 42, 0.05);
+    --shadow-card: 0 4px 24px rgba(15, 23, 42, 0.04);
 }
 
 /* ── color-scheme hints ── */
 html {
     color-scheme: dark;
+    background-color: var(--clr-bg);
 }
 
 [data-theme="light"] {
@@ -92,13 +135,18 @@ html {
 }
 
 /* ── Smooth theme transitions ── */
-html,
-html * {
-    transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.2s ease,
-        box-shadow 0.3s ease;
+/* Avoid html * to prevent layout thrashing and flashes on page load */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.navbar,
+.hero .overlay,
+.hero .stats,
+.footer,
+.card,
+section {
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
 
 /* ════════════════════════════════
@@ -175,8 +223,8 @@ select {
     color: #fff;
     font-family: var(--ff-head);
     font-weight: 700;
-    font-size: 0.9rem;
-    padding: 12px 24px;
+    font-size: var(--fs-sm);
+    padding: var(--space-3) var(--space-6);
     border-radius: var(--radius-sm);
     transition: top 0.2s ease;
     text-decoration: none;
