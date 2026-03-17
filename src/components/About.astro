@@ -1,28 +1,16 @@
 ---
 // About component — Geoingeniería Ltda
 const values = [
-  {
-    icon: 'fa-shield-halved',
-    title: 'Seguridad',
-    desc: 'Cero tolerancia a accidentes en todas nuestras obras y operaciones.',
-  },
-  {
-    icon: 'fa-microscope',
-    title: 'Rigor Técnico',
-    desc: 'Estándares de calidad certificados bajo ISO 9001:2015.',
-  },
-  {
-    icon: 'fa-handshake',
-    title: 'Compromiso',
-    desc: 'Cumplimiento de plazos y presupuestos garantizado contractualmente.',
-  },
+  { icon: "fa-shield-halved", title: "Seguridad" },
+  { icon: "fa-microscope", title: "Rigor Técnico" },
+  { icon: "fa-handshake", title: "Compromiso" },
 ];
 
 const certifications = [
-  'Certificación ISO 9001:2015',
-  'Registro BNE — MOP',
-  'Acreditación SERNAGEOMIN',
-  'Proveedor ENAP & CODELCO',
+  "Certificación ISO 9001:2015",
+  "Registro BNE — MOP",
+  "Acreditación SERNAGEOMIN",
+  "Proveedor ENAP & CODELCO",
 ];
 ---
 
@@ -31,32 +19,28 @@ const certifications = [
     <div class="text">
       <span class="section-tag">Quiénes somos</span>
       <h2 class="section-title">
-        Más de dos décadas<br /><span class="text-accent">construyendo Colombia</span>
+        Más de dos décadas<br /><span class="text-accent"
+          >construyendo Colombia</span
+        >
       </h2>
       <p>
-        Fundada en 1999, Geoingeniería Ltda es una empresa colombiana de ingeniería
-        especializada en obras civiles, geotecnia e infraestructura. Trabajamos con
-        entidades públicas y privadas en proyectos de alta complejidad técnica a lo
-        largo de todo el país.
-      </p>
-      <p>
-        Nuestro equipo de más de 80 profesionales combina experiencia en terreno con
-        tecnología de punta para entregar proyectos dentro de plazos y presupuestos
-        acordados.
+        Desde 1999, Geoingeniería Ltda lidera proyectos de geotecnia e
+        infraestructura en Colombia. Nuestro equipo de más de 80 profesionales
+        integra rigor técnico e innovación para superar las expectativas en cada
+        obra civil compleja.
       </p>
 
       <div class="values">
-        {values.map(v => (
-          <div class="valueItem" data-reveal>
-            <div class="valueIcon">
-              <i class={`fa-solid ${v.icon}`}></i>
-            </div>
-            <div>
+        {
+          values.map((v) => (
+            <div class="valueItem" data-reveal>
+              <div class="valueIcon">
+                <i class={`fa-solid ${v.icon}`} />
+              </div>
               <h4>{v.title}</h4>
-              <p>{v.desc}</p>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
 
       <a href="#contacto" class="btn-primary">
@@ -73,11 +57,13 @@ const certifications = [
         </div>
       </div>
       <div class="certifications">
-        {certifications.map(cert => (
-          <div class="certItem">
-            <i class="fa-solid fa-certificate"></i> {cert}
-          </div>
-        ))}
+        {
+          certifications.map((cert) => (
+            <div class="certItem">
+              <i class="fa-solid fa-certificate" /> {cert}
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>

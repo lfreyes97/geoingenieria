@@ -27,16 +27,18 @@
 
 /* Values */
 .about .values {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-5);
-    margin: 36px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin: 28px 0;
 }
 
 .about .valueItem {
     display: flex;
-    gap: 18px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
 }
 
 .about .valueIcon {
@@ -55,15 +57,9 @@
 
 .about .valueItem h4 {
     font-family: var(--ff-head);
-    font-size: var(--fs-base);
+    font-size: var(--fs-xs);
     font-weight: 700;
     color: var(--clr-white);
-    margin-bottom: 4px;
-}
-
-.about .valueItem p {
-    color: var(--clr-text-muted);
-    font-size: var(--fs-sm);
     margin: 0;
 }
 
