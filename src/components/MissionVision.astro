@@ -1,0 +1,32 @@
+---
+import "../styles/mission-vision.css";
+
+const mvItems = [
+  {
+    title: "Misión",
+    icon: "fa-bullseye",
+    desc: "Proveer soluciones integrales de ingeniería civil y geotecnia con los más altos estándares de calidad, seguridad y sostenibilidad, contribuyendo al desarrollo de la infraestructura en Colombia y generando valor para nuestros clientes y la sociedad.",
+  },
+  {
+    title: "Visión",
+    icon: "fa-eye",
+    desc: "Para el 2030, seremos la empresa líder en consultoría y construcción de obras civiles y geotecnia en el país, reconocida por nuestra innovación tecnológica, rigor técnico y compromiso inquebrantable con la excelencia y el desarrollo sostenible.",
+  },
+];
+---
+
+<section class="mission-vision">
+  <div class="container">
+    {
+      mvItems.map((item) => (
+        <div class="mv-card" data-reveal>
+          <div class="mv-icon">
+            <i class={`fa-solid ${item.icon}`} />
+          </div>
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

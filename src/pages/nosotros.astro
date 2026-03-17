@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import About from "../components/About.astro";
+import MissionVision from "../components/MissionVision.astro";
+---
+
+<Layout
+  title="Sobre Nosotros | Geoingeniería Ltda"
+  description="Conoce más sobre Geoingeniería Ltda, nuestra historia, misión y visión como empresa líder en ingeniería en Colombia."
+>
+  <main style="padding-top: 100px;">
+    <About />
+    <MissionVision />
+  </main>
+</Layout>
+
+<script>
+  // Global scroll-reveal
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  document.querySelectorAll("[data-reveal]").forEach((el) => {
+    el.classList.add("reveal");
+    revealObserver.observe(el);
+  });
+</script>
+
+<style>
+  main {
+    overflow-x: hidden;
+  }
+</style>
