@@ -1,67 +1,111 @@
-/* ── Clients Marquee ── */
-.clients {
-    background: var(--clr-bg3);
+/* ── Clients Section Redesign ── */
+.clients-section {
+    background-color: var(--clr-bg3);
+    padding: 3rem 0;
     border-top: 1px solid var(--clr-border);
     border-bottom: 1px solid var(--clr-border);
-    padding: 36px 0;
-    overflow: hidden;
+    /* Ocultamos el desborde en el padre absoluto pero permitimos margen interno */
+    overflow: hidden; 
 }
 
-.clients .inner {
+.inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: var(--space-8);
-    padding: 0 40px;
+    gap: 3rem;
+    padding: 0 2rem;
 }
 
-.clients .label {
+.clients-title {
     color: var(--clr-text-muted);
-    font-size: var(--fs-xs);
+    font-size: var(--fs-xs, 0.875rem);
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    font-weight: 600;
     flex-shrink: 0;
-    white-space: nowrap;
+    margin: 0;
 }
 
-.clients .logos {
+/* Contenedor del Marquee con efecto de fundido (mascara CSS) a los lados */
+.marquee-container {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+}
+
+.marquee-track {
     display: flex;
-    animation: marquee 18s linear infinite;
-    white-space: nowrap;
+    gap: 5rem; /* Espaciado generoso entre logos */
+    align-items: center;
+    /* max-content garantiza que todo el contenido dicte el ancho interno, necesario para translateX */
+    width: max-content;
+    animation: scroll-x 20s linear infinite;
 }
 
-@keyframes marquee {
+/* Permitir pausar la animación al pasar el cursor (interactividad premium) */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Reducción de movimiento por accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation-play-state: paused;
+    }
+}
+
+/* Se asume que el contenedor principal desplaza exactamente el 50% de todo el contenido, más medio espaciado */
+@keyframes scroll-x {
     from {
         transform: translateX(0);
     }
-
     to {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 2.5rem)); 
     }
 }
 
-.clients .logo {
-    display: inline-flex;
+.logo-wrapper {
+    display: flex;
     align-items: center;
-    font-family: var(--ff-head);
-    font-weight: 800;
-    font-size: var(--fs-base);
-    color: var(--clr-text-muted);
-    padding: 0 40px;
-    transition: color 0.3s;
-    letter-spacing: 0.05em;
+    justify-content: center;
 }
 
-.clients .logo:hover {
-    color: var(--clr-gold);
+.client-logo {
+    max-height: 55px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.5);
+    /* Transiciones suaves en filtro, opacidad y una pequeña escala interactiva */
+    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.25);
 }
 
 @media (max-width: 768px) {
-    .clients .inner {
+    .inner-container {
         flex-direction: column;
-        gap: var(--space-4);
-        padding: 0 20px;
+        gap: 1.5rem;
     }
-    .clients .label {
-        font-size: var(--fs-sm);
+    
+    .client-logo {
+        max-height: 45px;
     }
 }

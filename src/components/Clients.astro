@@ -1,26 +1,39 @@
 ---
-// Clients marquee component — Geoingeniería Ltda
-const clients = [
-  "MOP",
-  "CODELCO",
-  "ENAP",
-  "GORE Biobío",
-  "Serviu",
-  "AES Gener",
+import { Image } from "astro:assets";
+import logoComandoSur from "../assets/clientes/Logo Comando sur.svg";
+import logoElecnor from "../assets/clientes/Logo Elecnor.svg";
+
+// Base unida de clientes (puedes seguir agregando más logos en un futuro)
+const uniqueClients = [
+  { name: "Comando Sur", img: logoComandoSur },
+  { name: "Elecnor", img: logoElecnor },
+  { name: "Comando Sur", img: logoComandoSur },
+  { name: "Elecnor", img: logoElecnor },
 ];
 ---
 
-<section class="clients" aria-label="Clientes destacados">
-  <div class="inner">
-    <p class="label">Confían en nosotros</p>
-    <div class="logos">
-      {
-        [...clients, ...clients].map((c, i) => (
-          <span class="logo" key={i}>
-            {c}
-          </span>
-        ))
-      }
+<section class="clients-section" aria-labelledby="clients-heading">
+  <div class="inner-container">
+    <h2 id="clients-heading" class="clients-title">Confían en nosotros</h2>
+    
+    <div class="marquee-container">
+      {/* 
+        El truco para un marquee robusto sin cortes visuales en flexbox 
+        es tener dos pistas idénticas consecutivas.
+      */}
+      <div class="marquee-track">
+        {uniqueClients.map((client) => (
+          <div class="logo-wrapper">
+            <Image src={client.img} alt={client.name} class="client-logo" />
+          </div>
+        ))}
+        {/* Serie duplicada explícitamente y accesible */}
+        {uniqueClients.map((client) => (
+          <div class="logo-wrapper" aria-hidden="true">
+            <Image src={client.img} alt={client.name} class="client-logo" />
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
