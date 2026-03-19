@@ -1,0 +1,765 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const services = [
+  {
+    id: 'svc-1',
+    icon: 'fa-mountain',
+    title: 'Estudios Geotécnicos',
+    desc: 'Investigación del subsuelo, análisis de mecánica de suelos, sondajes y caracterización geológica para proyectos de todo tipo.',
+    fullDesc: 'Realizamos investigaciones completas del subsuelo mediante sondajes, calicatas y ensayos especializados. Nuestro equipo caracteriza las propiedades del terreno para garantizar cimientos seguros y diseños estructurales óptimos.',
+    items: ['Sondajes y calicatas', 'Ensayos SPT & CPT', 'Informes geotécnicos', 'Análisis de estabilidad', 'Clasificación de suelos'],
+  },
+  {
+    id: 'svc-2',
+    icon: 'fa-road',
+    title: 'Obras Viales',
+    desc: 'Diseño y construcción de carreteras, autopistas, caminos rurales y obras de pavimentación con los más altos estándares técnicos.',
+    fullDesc: 'Desde el diseño geométrico hasta la supervisión de construcción, gestionamos proyectos viales de envergadura. Aplicamos normativas vigentes y tecnología de punta para garantizar infraestructuras seguras y durables.',
+    items: ['Diseño geométrico vial', 'Pavimentación urbana', 'Supervisión de obras', 'Estudios de tránsito', 'Diseño de intersecciones'],
+  },
+  {
+    id: 'svc-3',
+    icon: 'fa-water',
+    title: 'Obras Hidráulicas',
+    desc: 'Proyectos de drenaje, alcantarillado, canales de riego y obras de contención de aguas con enfoque en sustentabilidad.',
+    fullDesc: 'Diseñamos y ejecutamos sistemas hidráulicos eficientes que manejan aguas de forma responsable. Desde drenajes urbanos hasta canales de riego, optimizamos el recurso hídrico con criterios ambientales.',
+    items: ['Diseño de canales', 'Sistemas de drenaje', 'Obras de contención', 'Alcantarillado sanitario', 'Manejo de aguas lluvias'],
+  },
+  {
+    id: 'svc-4',
+    icon: 'fa-hard-hat',
+    title: 'Infraestructura Civil',
+    desc: 'Construcción de puentes, túneles, muros de contención y obras de arte para proyectos de infraestructura a gran escala.',
+    fullDesc: 'Ejecutamos obras de ingeniería complejas que requieren planificación rigurosa y control técnico permanente. Nuestros proyectos integran diseño, geotecnia e innovación en construcción.',
+    items: ['Puentes y viaductos', 'Túneles', 'Muros de contención', 'Obras de arte', 'Cimentaciones especiales'],
+  },
+  {
+    id: 'svc-5',
+    icon: 'fa-drafting-compass',
+    title: 'Asesoría y Diseño',
+    desc: 'Consultoría técnica especializada, elaboración de proyectos de ingeniería y supervisión técnica independiente para sus obras.',
+    fullDesc: 'Brindamos asesoría integral a empresas constructoras, desarrolladores inmobiliarios y organismos públicos. Elaboramos proyectos de ingeniería según normativas vigentes y realizamos supervisión técnica independiente.',
+    items: ['Proyectos de ingeniería', 'ITO independiente', 'Asesoría normativa', 'Revisión de proyectos', 'Supervisión técnica'],
+  },
+  {
+    id: 'svc-6',
+    icon: 'fa-leaf',
+    title: 'Gestión Ambiental',
+    desc: 'Evaluación de impacto ambiental, planes de manejo y mitigación, y cumplimiento de normativas ambientales para proyectos de construcción.',
+    fullDesc: 'Gestionamos los aspectos ambientales de proyectos de construcción desde la evaluación inicial hasta el monitoreo post-construcción. Garantizamos cumplimiento normativo y prácticas sustentables.',
+    items: ['DGA & SEIA', 'Planes de manejo', 'Monitoreo ambiental', 'Evaluaciones de impacto', 'Cumplimiento normativo'],
+  },
+];
+---
+
+<Layout
+  title="Servicios | Geoingeniería Ltda"
+  description="Servicios especializados en ingeniería geotécnica, obras viales, hidráulicas e infraestructura civil con más de 25 años de experiencia."
+>
+  <!-- Hero Servicios -->
+  <header class="hero-servicios" data-reveal>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Nuestros <span class="text-accent">Servicios</span></h1>
+      <p>
+        Soluciones integrales en ingeniería geotécnica, obras civiles e infraestructura
+        respaldadas por tecnología de punta y profesionales altamente calificados.
+      </p>
+    </div>
+  </header>
+
+  <!-- Servicios Grid -->
+  <section class="servicios-expanded">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">Lo que podemos hacer por ti</span>
+        <h2 class="section-title">Especialidades y Servicios</h2>
+      </div>
+
+      <div class="grid services-grid">
+        {services.map((svc, index) => (
+          <article class={`service-card delay-${index}`} id={svc.id} data-reveal>
+            <div class="card-header">
+              <div class="iconWrap">
+                <i class={`fa-solid ${svc.icon}`}></i>
+              </div>
+              <h3>{svc.title}</h3>
+            </div>
+            
+            <p class="short-desc">{svc.desc}</p>
+            
+            <div class="full-desc">
+              <p>{svc.fullDesc}</p>
+            </div>
+
+            <ul class="items-list">
+              {svc.items.map(item => (
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="/contacto" class="service-link">
+              Solicitar consulta <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Trabajo -->
+  <section class="proceso-trabajo" data-reveal>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Metodología</span>
+        <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
+      </div>
+      
+      <div class="proceso-grid">
+        <div class="paso delay-0" data-reveal>
+          <div class="paso-numero">01</div>
+          <div class="paso-content">
+            <h3>Diagnóstico</h3>
+            <p>Evaluamos detalladamente tu proyecto, terreno y requerimientos específicos para entender tus necesidades.</p>
+          </div>
+        </div>
+
+        <div class="paso delay-1" data-reveal>
+          <div class="paso-numero">02</div>
+          <div class="paso-content">
+            <h3>Diseño</h3>
+            <p>Desarrollamos soluciones técnicas personalizadas aplicando normativas vigentes y mejores prácticas.</p>
+          </div>
+        </div>
+
+        <div class="paso delay-2" data-reveal>
+          <div class="paso-numero">03</div>
+          <div class="paso-content">
+            <h3>Supervisión</h3>
+            <p>Supervisamos la ejecución de obras con control de calidad permanente y gestión de riesgos.</p>
+          </div>
+        </div>
+
+        <div class="paso delay-3" data-reveal>
+          <div class="paso-numero">04</div>
+          <div class="paso-content">
+            <h3>Entrega</h3>
+            <p>Completamos el proyecto con informes detallados y capacitación técnica si corresponde.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-servicios" data-reveal>
+    <div class="cta-overlay"></div>
+    <div class="container cta-content">
+      <h2>¿Tienes un proyecto en mente?</h2>
+      <p>Nuestro equipo está listo para ayudarte a transformarlo en realidad</p>
+      <a href="/contacto" class="cta-btn">
+        Contáctanos Hoy <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Servicios */
+  .hero-servicios {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--nav-h) + 4rem) 2rem 4rem;
+    background: var(--clr-bg);
+    color: var(--clr-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 100%, rgba(240, 142, 30, 0.15), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .hero-servicios::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(240,142,30,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .hero-servicios h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    font-family: var(--ff-head);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-accent {
+    color: var(--brand-accent-strong);
+    background: linear-gradient(90deg, var(--clr-gold), var(--brand-primary-bright));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-servicios p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Utils Section */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(240, 142, 30, 0.1);
+    color: var(--clr-gold);
+    border: 1px solid rgba(240, 142, 30, 0.2);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--clr-white);
+    font-family: var(--ff-head);
+    font-weight: 700;
+  }
+
+  /* Servicios Expandidos */
+  .servicios-expanded {
+    padding: var(--section-py) 0;
+    background-color: var(--clr-bg2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .servicios-expanded::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 0% 50%, rgba(43, 123, 195, 0.05), transparent 50%),
+                radial-gradient(circle at 100% 50%, rgba(240, 142, 30, 0.03), transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .service-card {
+    background: linear-gradient(145deg, var(--clr-surface), var(--clr-bg2));
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(240, 142, 30, 0.06), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-primary), var(--clr-gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(240, 142, 30, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(240, 142, 30, 0.05);
+  }
+
+  [data-theme="light"] .service-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(240, 142, 30, 0.1);
+  }
+
+  .service-card:hover::after,
+  .service-card:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .card-header {
+    margin-bottom: 20px;
+  }
+
+  .iconWrap {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(240, 142, 30, 0.15), rgba(240, 142, 30, 0.02));
+    border: 1px solid rgba(240, 142, 30, 0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-gold);
+    font-size: 1.75rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 24px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.05);
+  }
+
+  [data-theme="light"] .iconWrap {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05), inset 0 1px 1px rgba(255,255,255,0.8);
+  }
+
+  .service-card:hover .iconWrap {
+    background: linear-gradient(135deg, rgba(240, 142, 30, 0.25), rgba(240, 142, 30, 0.05));
+    transform: scale(1.1) translateY(-4px);
+    border-color: rgba(240, 142, 30, 0.4);
+    box-shadow: 0 12px 24px rgba(240, 142, 30, 0.15), inset 0 1px 1px rgba(255,255,255,0.1);
+    color: var(--brand-accent-strong);
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    color: var(--clr-white);
+    font-family: var(--ff-head);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .short-desc {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .full-desc {
+    color: var(--clr-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed var(--clr-border);
+  }
+
+  .items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .items-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--clr-text);
+    font-size: 0.95rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .service-card:hover .items-list li {
+    transform: translateX(6px);
+  }
+
+  .service-card:hover .items-list li:nth-child(1) { transition-delay: 0.05s; }
+  .service-card:hover .items-list li:nth-child(2) { transition-delay: 0.1s; }
+  .service-card:hover .items-list li:nth-child(3) { transition-delay: 0.15s; }
+  .service-card:hover .items-list li:nth-child(4) { transition-delay: 0.2s; }
+  .service-card:hover .items-list li:nth-child(n+5) { transition-delay: 0.25s; }
+
+  .items-list i {
+    color: var(--clr-gold);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .service-card:hover .items-list i {
+    transform: scale(1.2);
+    color: var(--brand-accent-strong);
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--clr-gold);
+    font-family: var(--ff-head);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+    margin-top: auto;
+  }
+
+  .service-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-accent-strong);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .service-link i {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .service-link:hover {
+    color: var(--brand-accent-strong);
+  }
+
+  .service-link:hover::after {
+    width: 100%;
+  }
+
+  .service-link:hover i {
+    transform: translateX(6px);
+  }
+
+  /* Proceso de Trabajo */
+  .proceso-trabajo {
+    padding: var(--section-py) 0;
+    background-color: var(--clr-bg);
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    position: relative;
+  }
+
+  /* Connecting line */
+  .proceso-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--clr-border) 20%, var(--clr-border) 80%, transparent);
+    z-index: 0;
+  }
+
+  .paso {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-card);
+  }
+
+  .paso::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 0%, rgba(43, 123, 195, 0.08), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .paso:hover {
+    transform: translateY(-8px);
+    border-color: var(--brand-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(43, 123, 195, 0.1);
+  }
+
+  [data-theme="light"] .paso:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 30px rgba(43, 123, 195, 0.15);
+  }
+
+  .paso:hover::after {
+    opacity: 1;
+  }
+
+  .paso-numero {
+    font-family: var(--ff-head);
+    font-size: 5.5rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+    -webkit-background-clip: text;
+    line-height: 1;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    z-index: -1;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-theme="light"] .paso-numero {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.03);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), transparent);
+    -webkit-background-clip: text;
+  }
+
+  .paso:hover .paso-numero {
+    transform: scale(1.1) rotate(-5deg);
+    -webkit-text-stroke: 1px rgba(240, 142, 30, 0.2);
+    background: linear-gradient(180deg, rgba(240, 142, 30, 0.3), transparent);
+    -webkit-background-clip: text;
+  }
+
+  .paso-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .paso h3 {
+    font-family: var(--ff-head);
+    font-size: 1.4rem;
+    color: var(--clr-white);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .paso p {
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* CTA Final */
+  .cta-servicios {
+    padding: calc(var(--section-py) * 1.5) 0;
+    background: linear-gradient(135deg, var(--clr-bg3) 0%, var(--brand-primary-deep) 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter></defs><rect width="400" height="400" filter="url(%23noise)" opacity="0.05"/></svg>');
+    mix-blend-mode: overlay;
+    z-index: 0;
+  }
+
+  .cta-servicios::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(240, 142, 30, 0.2), transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(43, 123, 195, 0.3), transparent 50%);
+    z-index: 0;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    font-family: var(--ff-head);
+    color: var(--clr-white);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .cta-content p {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: var(--clr-gold);
+    color: var(--clr-on-accent);
+    font-family: var(--ff-head);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(240, 142, 30, 0.3);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(240, 142, 30, 0.4), inset 0 2px 2px rgba(255,255,255,0.2);
+    background: var(--clr-gold-light);
+  }
+
+  .cta-btn i {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cta-btn:hover i {
+    transform: translateX(6px);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .proceso-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .proceso-grid::before {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-servicios {
+      padding: calc(var(--nav-h) + 2rem) 1rem 3rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .proceso-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Reveal Animation Delay Utils */
+  .delay-0 { animation-delay: 0.1s; }
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.5s; }
+  .delay-5 { animation-delay: 0.6s; }
+
+  /* Reveal */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  [data-reveal].visible {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Global scroll-reveal
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' },
+  );
+
+  document.querySelectorAll("[data-reveal]").forEach((el) => {
+    el.classList.add("reveal");
+    revealObserver.observe(el);
+  });
+
+  // Mouse tracking for glowing cards
+  const grids = document.querySelectorAll('.services-grid');
+  grids.forEach(grid => {
+    (grid as HTMLElement).addEventListener('mousemove', (e) => {
+      const cards = grid.querySelectorAll(".service-card");
+      cards.forEach((card) => {
+        const rect = (card as HTMLElement).getBoundingClientRect();
+        const x = (e as MouseEvent).clientX - rect.left;
+        const y = (e as MouseEvent).clientY - rect.top;
+        (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+        (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+      });
+    });
+  });
+</script>
