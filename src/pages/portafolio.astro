@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  const featuredDiff = Number(b.data.featured) - Number(a.data.featured);
+  if (featuredDiff !== 0) return featuredDiff;
+  const orderDiff = a.data.order - b.data.order;
+  if (orderDiff !== 0) return orderDiff;
+  return b.data.year - a.data.year;
+});
+---
+
+<Layout
+  title="Portafolio | Geoingenieria Ltda"
+  description="Portafolio de proyectos de ingenieria civil, geotecnia e infraestructura ejecutados por Geoingenieria Ltda."
+>
+  <section class="projects portfolio-page" id="main-content">
+    <div class="section-header light">
+      <span class="section-tag">Portafolio</span>
+      <h1 class="section-title">
+        Proyectos que <span class="text-accent">generan impacto</span>
+      </h1>
+      <p class="section-desc">
+        Explora casos reales con alcance tecnico, contexto territorial y resultados medibles.
+      </p>
+    </div>
+
+    <div class="grid portfolio-grid">
+      {projects.map((project) => (
+        <article class="card" data-reveal>
+          <Image
+            src={project.data.cover}
+            alt={project.data.coverAlt}
+            loading="lazy"
+          />
+          <div class="overlay">
+            <div class="tag">{project.data.category}</div>
+            <h2>{project.data.title}</h2>
+            <p>{project.data.summary}</p>
+            <a href={`/proyectos/${project.slug}`} class="btn">Abrir caso</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

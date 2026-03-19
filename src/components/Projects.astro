@@ -1,39 +1,16 @@
 ---
-import { Image } from 'astro:assets';
-import damProjectImg from '../assets/images/dam_project.png';
-import geoSurveyImg from '../assets/images/geo_survey.png';
-import tunnelProjectImg from '../assets/images/tunnel_project.png';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 
-// Projects component — Geoingeniería Ltda
-const projects = [
-  {
-    id: 'proj-1',
-    image: damProjectImg,
-    alt: 'Proyecto Presa El Toro',
-    tag: 'Obras Hidráulicas',
-    title: 'Presa El Toro — Región del Biobío',
-    desc: 'Diseño y supervisión de obras de contención hidráulica en complejo terreno montañoso.',
-    large: true,
-  },
-  {
-    id: 'proj-2',
-    image: geoSurveyImg,
-    alt: 'Estudio geotécnico Atacama',
-    tag: 'Geotecnia',
-    title: 'Estudio Geotécnico Atacama',
-    desc: 'Caracterización del subsuelo en zona desértica para proyecto minero a gran escala.',
-    large: false,
-  },
-  {
-    id: 'proj-3',
-    image: tunnelProjectImg,
-    alt: 'Túnel Ruta 68',
-    tag: 'Infraestructura Civil',
-    title: 'Túnel Ruta 68 — Valparaíso',
-    desc: 'Excavación y revestimiento de túnel de 1.2 km en roca dura y variable.',
-    large: false,
-  },
-];
+const projects = (await getCollection("projects"))
+  .sort((a, b) => {
+    const featuredDiff = Number(b.data.featured) - Number(a.data.featured);
+    if (featuredDiff !== 0) return featuredDiff;
+    const orderDiff = a.data.order - b.data.order;
+    if (orderDiff !== 0) return orderDiff;
+    return b.data.year - a.data.year;
+  })
+  .slice(0, 3);
 ---
 
 <section class="projects" id="proyectos">
@@ -47,21 +24,25 @@ const projects = [
   </div>
 
   <div class="grid">
-    {projects.map(proj => (
-      <div class={`card${proj.large ? ' large' : ''}`} id={proj.id} data-reveal>
-        <Image src={proj.image} alt={proj.alt} loading={proj.id === 'proj-1' ? "eager" : "lazy"} />
+    {projects.map((project, index) => (
+      <div class={`card${index === 0 ? " large" : ""}`} id={`proj-${project.slug}`} data-reveal>
+        <Image
+          src={project.data.cover}
+          alt={project.data.coverAlt}
+          loading={index === 0 ? "eager" : "lazy"}
+        />
         <div class="overlay">
-          <div class="tag">{proj.tag}</div>
-          <h3>{proj.title}</h3>
-          <p>{proj.desc}</p>
-          <a href="#contacto" class="btn">Ver detalles</a>
+          <div class="tag">{project.data.category}</div>
+          <h3>{project.data.title}</h3>
+          <p>{project.data.summary}</p>
+          <a href={`/proyectos/${project.slug}`} class="btn">Ver detalles</a>
         </div>
       </div>
     ))}
   </div>
 
   <div class="cta">
-    <a href="#contacto" class="btn-primary">
+    <a href="/portafolio" class="btn-primary">
       Ver Todos los Proyectos <i class="fa-solid fa-arrow-right"></i>
     </a>
   </div>

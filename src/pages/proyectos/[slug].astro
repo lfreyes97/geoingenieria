@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<Layout
+  title={`${project.data.title} | Portafolio Geoingenieria`}
+  description={project.data.summary}
+>
+  <article class="project-detail" id="main-content">
+    <header class="project-hero">
+      <Image src={project.data.cover} alt={project.data.coverAlt} loading="eager" />
+      <div class="project-hero-overlay">
+        <p class="project-eyebrow">{project.data.category}</p>
+        <h1>{project.data.title}</h1>
+        <p class="project-summary">{project.data.summary}</p>
+        <div class="project-meta">
+          <span>{project.data.location}</span>
+          <span>{project.data.year}</span>
+        </div>
+      </div>
+    </header>
+
+    {project.data.stats.length > 0 && (
+      <section class="project-stats" aria-label="Metricas del proyecto">
+        {project.data.stats.map((item) => (
+          <div class="project-stat-card">
+            <p class="project-stat-value">{item.value}</p>
+            <p class="project-stat-label">{item.label}</p>
+          </div>
+        ))}
+      </section>
+    )}
+
+    <section class="project-content prose">
+      <Content />
+    </section>
+
+    <div class="project-actions">
+      <a class="btn-outline" href="/portafolio">Volver al portafolio</a>
+      <a class="btn-primary" href="/contacto">Solicitar propuesta</a>
+    </div>
+  </article>
+</Layout>
